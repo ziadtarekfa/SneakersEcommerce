@@ -54,7 +54,6 @@ hr {
 
 header li:hover {
     color: black;
-    cursor: pointer;
 }
 
 header button:hover {
@@ -65,6 +64,9 @@ header button:hover {
 
 }
 
-.hover-cursor:hover {
+header li:hover,
+header button:hover,
+#cart:hover,
+#logo:hover {
     cursor: pointer;
 }

@@ -1,0 +1,48 @@
+.Footer {
+    display: flex;
+    background-color: var(--footerColor);
+    padding: 3% 8% 5% 8%;
+    justify-content: space-between;
+}
+
+footer ul,
+footer p {
+    color: white;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Footer .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 20px;
+
+}
+
+.Footer ul {
+    list-style: none;
+}
+
+.Footer span {
+    text-decoration: underline;
+}
+
+/* Hovering */
+
+.social-media-container *:hover,
+.Footer .grid li:hover,
+span:hover {
+    color: var(--primaryColor);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
