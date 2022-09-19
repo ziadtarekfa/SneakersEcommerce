@@ -8,7 +8,7 @@ const Header = () => {
         <React.Fragment>
             <header className="Header">
                 <nav>
-                    <img id='logo' src={logo} alt="logo" />
+                    <img id='logo' className='hover-cursor' src={logo} alt="logo" />
                     <ul>
                         <li>Collections</li>
                         <li>Men</li>
@@ -18,10 +18,8 @@ const Header = () => {
                     </ul>
                 </nav>
                 <div>
-                    {/* <img id='cart' src={cart} alt="cart icon" /> */}
-                    {/* <svg></svg> */}
-                    <object id='cart' data={cart}> </object>
-                    <button>Login</button>
+                    <img id='cart' className='hover-cursor' src={cart} alt="cart icon" />
+                    <button className='hover-cursor'>Login</button>
                 </div>
             </header>
             <hr></hr>

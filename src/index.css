@@ -8,6 +8,7 @@
 :root {
     --backgroundColor: white;
     --primaryColor: #FF7D1A;
+    --buttonHoverColor: #FFEDE1;
 }
 
 body {
