@@ -1,0 +1,13 @@
+.category-card {
+    background-color: #79797E;
+    /* background-image: url('../assets/Headers/men-header.jpg'); */
+    background-size: cover;
+    margin: 10px 8% 0 8%;
+    border-radius: 5px;
+    padding: 5%;
+}
+
+.category-card h1 {
+    color: white;
+    font-size: 52px;
+}

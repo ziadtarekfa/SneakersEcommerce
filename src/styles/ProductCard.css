@@ -9,7 +9,13 @@
 .ProductCard img {
     border-radius: 10px;
     height: 75%;
+    transition: height 2s;
 }
+
+/* .ProductCard img::after {
+    content: "";
+    background-color: red;
+} */
 
 .ProductCard h6 {
     color: var(--primaryColor);
