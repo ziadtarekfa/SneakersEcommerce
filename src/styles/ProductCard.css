@@ -1,0 +1,35 @@
+.ProductCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 23%;
+    height: 500px;
+}
+
+.ProductCard img {
+    border-radius: 10px;
+    height: 75%;
+}
+
+.ProductCard h6 {
+    color: var(--primaryColor);
+
+}
+
+.prices-container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10%;
+}
+
+.prices-container * {
+    align-self: center;
+}
+
+.discount-percentage-container {
+    color: var(--primaryColor);
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--buttonHoverColor);
+}
