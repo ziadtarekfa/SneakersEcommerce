@@ -1,0 +1,36 @@
+.filter-bar {
+    display: flex;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: space-between;
+}
+
+.filter-bar section {
+    display: flex;
+}
+
+.filter-products-container {
+    width: 28%;
+    justify-content: space-between;
+}
+
+select {
+    height: 40px;
+    width: 80px;
+    font-size: 15px;
+    padding-left: 5px;
+    -webkit-appearance: none;
+}
+
+.sort-products-container {
+    width: 25%;
+    justify-content: space-between;
+}
+
+.sort-products-container>select {
+    width: 36%;
+    font-size: 15px;
+    padding-left: 5px;
+}

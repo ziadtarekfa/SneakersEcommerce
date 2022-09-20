@@ -1,5 +1,5 @@
 import '../styles/BrandCard.css';
-import addidas from '../assets/collections/adidas-logo.svg';
+// import addidas from '../assets/collections/adidas-logo.svg';
 
 const BrandCard = ({ brandLogo, brandName }) => {
     return (

@@ -5,6 +5,7 @@ import Header from './components/Header';
 import ProductCard from './components/ProductCard';
 import headerImage from './assets/Headers/men-header.jpg';
 import BrandCard from './components/BrandCard';
+import FilterBar from './components/FilterBar';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
       {/* <CategoryCard headerImage={headerImage} category="Men" /> */}
 
+      <FilterBar />
       <Footer />
 
     </div>
