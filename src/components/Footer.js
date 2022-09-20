@@ -1,4 +1,4 @@
-import '../styles/Footer.css';
+import '../ComponentsStyles/Footer.css';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { BsYoutube } from 'react-icons/bs';
 import { BsTwitter } from 'react-icons/bs';

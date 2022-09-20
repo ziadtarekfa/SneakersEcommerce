@@ -1,4 +1,4 @@
-import '../styles/BenefitCard.css';
+import '../ComponentsStyles/BenefitCard.css';
 
 const BenefitCard = ({ image, alternateText, heading, paragraph }) => {
 

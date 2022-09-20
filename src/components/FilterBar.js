@@ -1,4 +1,4 @@
-import '../styles/FilterBar.css';
+import '../ComponentsStyles/FilterBar.css';
 const FilterBar = () => {
     return (
         <div className="filter-bar">

@@ -1,4 +1,4 @@
-import '../styles/Header.css';
+import '../ComponentsStyles/Header.css';
 import logo from '../assets/icons/logo.svg';
 import cart from '../assets/icons/icon-cart.svg';
 import React from 'react';

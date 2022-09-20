@@ -6,16 +6,18 @@ import ProductCard from './components/ProductCard';
 import headerImage from './assets/Headers/men-header.jpg';
 import BrandCard from './components/BrandCard';
 import FilterBar from './components/FilterBar';
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
 
       {/* <CategoryCard headerImage={headerImage} category="Men" /> */}
 
-      <FilterBar />
-      <Footer />
+      {/* <FilterBar />
+      <Footer /> */}
+      <Home />
 
     </div>
   );

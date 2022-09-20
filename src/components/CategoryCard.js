@@ -1,4 +1,4 @@
-import '../styles/CategoryCard.css';
+import '../ComponentsStyles/CategoryCard.css';
 
 const CategoryCard = ({ headerImage, category }) => {
     return (
