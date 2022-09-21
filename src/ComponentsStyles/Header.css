@@ -42,7 +42,7 @@ header button {
     font-size: 17px;
 }
 
-hr {
+.header-hr {
     width: 84%;
     margin-left: auto;
     margin-right: auto;

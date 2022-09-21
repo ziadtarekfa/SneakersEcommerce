@@ -22,7 +22,7 @@ const Header = () => {
                     <button>Login</button>
                 </div>
             </header>
-            <hr></hr>
+            <hr className='header-hr' />
         </React.Fragment>
     );
 }

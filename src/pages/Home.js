@@ -1,9 +1,22 @@
 import Header from "../components/Header";
 import heroSneaker from '../assets/images/hero-sneaker.png';
+import BenefitCard from '../components/BenefitCard';
+import ProductCard from '../components/ProductCard';
+import Footer from '../components/Footer';
+import truck from '../assets/icons/icon-truck.svg';
+import handHoldingDollar from '../assets/icons/icon-hand-holding-dollar.svg';
+import star from '../assets/icons/icon-star.svg';
 
 import '../pagesStyles/Home.css';
 
 const Home = () => {
+
+    const benefitsParagraphs = [
+        "Get your shoes as quickly as possible. Keep track to your deliveries and enjoy our fast shippping right at your door step.",
+        "The sneakers available are just within the reach of your pocket. No hidden cost. No addtional fee required other than what’s stated.",
+        "From your favorite brand to the latest trends, we sell sneakers only of the finest and durable materials you’d ever find."
+    ];
+
     return (
         <div>
             <Header />
@@ -17,6 +30,34 @@ const Home = () => {
                     <img src={heroSneaker} alt="heroSneaker" />
                 </section>
             </div>
+
+            <div className="benefits-container">
+                <div className="benefits-heading">
+                    <hr />
+                    <h2>Benefits</h2>
+                </div>
+                <div className="benefits-content">
+                    <BenefitCard image={truck} alternateText="truck icon" heading="Fast Delivery" paragraph={benefitsParagraphs[0]} />
+                    <BenefitCard image={handHoldingDollar} alternateText="hand holding dollar icon" heading="Affordable Goods" paragraph={benefitsParagraphs[1]} />
+                    <BenefitCard image={star} alternateText="star icon" heading="Best Quality" paragraph={benefitsParagraphs[2]} />
+                </div>
+            </div>
+
+            <section className="products-section">
+                <h1>Products</h1>
+                <div className="products-container">
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+                    <ProductCard />
+                </div>
+                <div>
+                    <button>Explore More</button>
+                </div>
+
+            </section>
+            <Footer />
+
 
         </div>
     );

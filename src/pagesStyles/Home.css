@@ -3,7 +3,7 @@
     margin: 0 8% 0 8%;
     flex-basis: auto;
     padding-top: 10%;
-    padding-bottom: 10%;
+    padding-bottom: 8%;
 }
 
 .intro-content-container {
@@ -38,4 +38,78 @@
 
 .hero-sneaker-container img {
     max-width: 100%;
+}
+
+/* Benefits Section */
+
+.benefits-container {
+    padding: 0 8% 0 8%;
+}
+
+.benefits-heading {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.benefits-heading h2 {
+    font-size: 44px;
+
+}
+
+.benefits-content {
+    display: flex;
+    margin-left: 10px;
+    margin-top: 50px;
+    padding-bottom: 8%;
+}
+
+/* Products Section */
+
+.products-section {
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 4%;
+    padding-bottom: 7%;
+    background-color: #F7F8FD;
+}
+
+.products-section h1 {
+    font-size: 44px;
+}
+
+.products-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+}
+
+.products-container+div {
+    display: flex;
+    justify-content: center;
+}
+
+.products-section button {
+    width: 17%;
+    height: 60px;
+
+    background-color: var(--buttonHoverColor);
+    color: var(--primaryColor);
+    font-weight: bold;
+    margin-top: 5%;
+    border: 1px solid var(--primaryColor);
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.products-section button:hover {
+    border: none;
+    background-color: var(--primaryColor);
+    color: white;
+    transition-duration: 0.5s;
+
+    cursor: pointer;
 }

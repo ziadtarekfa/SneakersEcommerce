@@ -7,7 +7,7 @@ const BenefitCard = ({ image, alternateText, heading, paragraph }) => {
             <div className='image-container'>
                 <img src={image} alt={alternateText} />
             </div>
-            <h1>{heading}</h1>
+            <h3>{heading}</h3>
             <p>
                 {paragraph}
             </p>
