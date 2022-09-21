@@ -1,5 +1,4 @@
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+
 import CategoryCard from '../components/CategoryCard';
 import '../pagesStyles/Contact.css';
 import { IoLocation, IoCall } from "react-icons/io5";
@@ -7,7 +6,6 @@ import { MdEmail } from "react-icons/md";
 const Contact = () => {
     return (
         <div>
-            <Header />
             <CategoryCard category="Contact" />
             <div className='contact-container'>
                 <section className='contact-info'>
@@ -39,7 +37,6 @@ const Contact = () => {
                 </section>
 
             </div>
-            <Footer />
         </div>
     );
 }

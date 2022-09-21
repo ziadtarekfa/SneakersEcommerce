@@ -1,8 +1,8 @@
-import Header from "../components/Header";
+
 import heroSneaker from '../assets/images/hero-sneaker.png';
 import BenefitCard from '../components/BenefitCard';
 import ProductCard from '../components/ProductCard';
-import Footer from '../components/Footer';
+
 import truck from '../assets/icons/icon-truck.svg';
 import handHoldingDollar from '../assets/icons/icon-hand-holding-dollar.svg';
 import star from '../assets/icons/icon-star.svg';
@@ -19,7 +19,6 @@ const Home = () => {
 
     return (
         <div>
-            <Header />
             <div className="intro-container">
                 <section className="intro-content-container">
                     <h1>Discover Your Dream Sneakers</h1>
@@ -56,8 +55,6 @@ const Home = () => {
                 </div>
 
             </section>
-            <Footer />
-
 
         </div>
     );
