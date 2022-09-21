@@ -8,6 +8,7 @@ import BrandCard from './components/BrandCard';
 import FilterBar from './components/FilterBar';
 import Home from './pages/Home';
 import Collections from './pages/Collections';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       {/* <FilterBar />
       <Footer /> */}
       {/* <Home /> */}
-      <Collections />
+      <Contact />
 
     </div>
   );
