@@ -7,6 +7,7 @@ import headerImage from './assets/Headers/men-header.jpg';
 import BrandCard from './components/BrandCard';
 import FilterBar from './components/FilterBar';
 import Home from './pages/Home';
+import Collections from './pages/Collections';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
 
       {/* <FilterBar />
       <Footer /> */}
-      <Home />
+      {/* <Home /> */}
+      <Collections />
 
     </div>
   );
