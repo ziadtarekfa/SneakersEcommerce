@@ -1,0 +1,9 @@
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 8% 0 8%;
+    overflow: hidden;
+    row-gap: 5%;
+    column-gap: 2%;
+    padding-bottom: 20%;
+}

@@ -2,14 +2,20 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 23%;
-    height: 500px;
+    width: 300px;
+    height: 431px;
+    /* width: 23%;
+    */
 }
 
 .ProductCard img {
     border-radius: 10px;
     height: 75%;
     transition: height 2s;
+}
+
+.ProductCard h2 {
+    font-size: 18px;
 }
 
 /* .ProductCard img::after {

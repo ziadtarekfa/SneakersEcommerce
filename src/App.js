@@ -9,6 +9,8 @@ import FilterBar from './components/FilterBar';
 import Home from './pages/Home';
 import Collections from './pages/Collections';
 import Contact from './pages/Contact';
+import MenCollection from './pages/MenCollection';
+import AllCollections from './pages/AllCollections';
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
       {/* <FilterBar />
       <Footer /> */}
       {/* <Home /> */}
-      <Contact />
+      {/* <Contact /> */}
+      {/* <MenCollection /> */}
+      {/* <AllCollections /> */}
 
     </div>
   );
