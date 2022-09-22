@@ -1,10 +1,16 @@
 import '../ComponentsStyles/Header.css';
 import logo from '../assets/icons/logo.svg';
 import cart from '../assets/icons/icon-cart.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React from 'react';
 
 const Header = () => {
+    let navigate = useNavigate();
+    // const loginBtn = document.getElementsByClassName("loginBtn")[0];
+    function handleClick() {
+        navigate("/login");
+    }
+
     return (
         <React.Fragment>
             <header className="Header">
@@ -15,7 +21,6 @@ const Header = () => {
                     <ul>
                         <li>
                             <Link to={"/collections"}>Collections</Link>
-
                         </li>
                         <li>
                             <Link to={"/products/men"}>Men</Link>
@@ -33,7 +38,7 @@ const Header = () => {
                 </nav>
                 <div>
                     <img id='cart' src={cart} alt="cart icon" />
-                    <button>Login</button>
+                    <button onClick={handleClick}>Login</button>
                 </div>
             </header>
             <hr className='header-hr' />
