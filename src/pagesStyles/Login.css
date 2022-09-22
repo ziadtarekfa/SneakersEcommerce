@@ -1,0 +1,78 @@
+.login {
+    background-image: url('../assets/auth-bg.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.login-container {
+    background-color: white;
+    height: 67%;
+    width: 40%;
+    padding: 4% 3% 4% 3%;
+
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    margin-top: 10%;
+}
+
+.login-container input {
+    border: none;
+    border-bottom: 2px solid lightgray;
+    padding: 10px 10px 10px 0;
+    font-size: 15px;
+    min-height: 50px;
+    resize: vertical;
+    outline: none;
+
+}
+
+.login-container input+input {
+    margin-top: 3%;
+}
+
+.login-container button {
+    min-height: 50px;
+    color: white;
+    background-color: var(--primaryColor);
+    border: none;
+    font-size: 17px;
+    width: 40%;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+
+.login-container form+div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+.login-container button:hover {
+    background-color: var(--buttonHoverColor);
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.login-container input:focus {
+    border-color: var(--primaryColor);
+    transition: 0.2s;
+}
+
+.login-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.login-container a:hover {
+    border-bottom: 2px solid var(--primaryColor);
+}

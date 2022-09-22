@@ -10,6 +10,7 @@ import AllCollections from './pages/AllCollections';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FilterBar from './components/FilterBar';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Login />} />
           <Route path='/collections' element={<Collections />} />
           <Route path='/products' element={<AllCollections />} />
           <Route path='/contact' element={<Contact />} />
