@@ -9,6 +9,7 @@
     --backgroundColor: white;
     --primaryColor: #FF7D1A;
     --buttonHoverColor: #FFEDE0;
+    --lightGreyColor: #B5B6BA;
     --footerColor: #1D2025;
 }
 
@@ -16,4 +17,21 @@ body {
     /* background-color: var(--backgroundColor); */
     background-color: #F7F8FD;
 
+}
+
+.default-button {
+    background-color: var(--primaryColor);
+    border: none;
+    border-radius: 10px;
+    height: 37px;
+    color: var(--backgroundColor);
+    font-size: 17px;
+}
+
+.default-button:hover {
+    background-color: var(--buttonHoverColor);
+    color: var(--primaryColor);
+    border: 2px solid var(--primaryColor);
+    transition-duration: 0.3s;
+    cursor: pointer;
 }

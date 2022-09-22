@@ -2,7 +2,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './pages/Home';
-import Collections from './pages/Collections';
+import Brands from './pages/Brands';
 import Contact from './pages/Contact';
 import MenCollection from './pages/MenCollection';
 import WomenCollection from './pages/WomenCollection';
@@ -22,7 +22,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/collections' element={<Collections />} />
+          <Route path='/collections' element={<Brands />} />
           <Route path='/products' element={<AllCollections />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/products/men' element={<MenCollection />} />

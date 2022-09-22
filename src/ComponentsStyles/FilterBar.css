@@ -1,10 +1,7 @@
 .filter-bar {
     display: flex;
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-top: 5%;
-    padding-bottom: 5%;
     justify-content: space-between;
+    padding: 5% 8% 5% 8%;
 }
 
 .filter-bar section {
@@ -12,16 +9,8 @@
 }
 
 .filter-products-container {
-    width: 28%;
+    width: 30%;
     justify-content: space-between;
-}
-
-select {
-    height: 40px;
-    width: 80px;
-    font-size: 15px;
-    padding-left: 5px;
-    -webkit-appearance: none;
 }
 
 .sort-products-container {
@@ -29,8 +18,11 @@ select {
     justify-content: space-between;
 }
 
-.sort-products-container>select {
-    width: 36%;
+.filter-bar select {
+    height: 40px;
     font-size: 15px;
-    padding-left: 5px;
+    padding: 0 5px 0 5px;
+    outline: none;
+    -webkit-appearance: none;
+
 }

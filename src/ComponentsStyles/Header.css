@@ -10,9 +10,18 @@ header nav {
     display: flex;
 }
 
+header div {
+    /* Button and Cart container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+
+}
+
 header a {
     text-decoration: none;
-    color: #76787F;
+    color: grey;
 }
 
 
@@ -21,57 +30,29 @@ header a {
 }
 
 nav ul {
-    list-style: none;
     display: flex;
     justify-content: space-between;
+    list-style: none;
     width: 100%;
     font-size: 20px;
-    color: #76787F;
-}
-
-header div {
-    /* Button and Cart container */
-    justify-content: space-between;
-    align-items: center;
-    width: 10%;
-    display: flex;
-
 }
 
 header button {
-    background-color: var(--primaryColor);
-    border: none;
-    border-radius: 10px;
-    height: 37px;
     width: 60%;
-    color: var(--backgroundColor);
-    font-size: 17px;
 }
 
 .header-hr {
-    width: 84%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 8% 0 8%;
 }
 
 
 /* Hovers */
 
-
 header a:hover {
     color: black;
 }
 
-header button:hover {
-    background-color: var(--buttonHoverColor);
-    color: var(--primaryColor);
-    border: 2px solid var(--primaryColor);
-    transition-duration: 0.3s;
-
-}
-
 header li:hover,
-header button:hover,
 #cart:hover,
 #logo:hover {
     cursor: pointer;

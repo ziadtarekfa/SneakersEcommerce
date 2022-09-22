@@ -1,13 +1,9 @@
-.Footer {
+footer {
     display: flex;
+    justify-content: space-between;
     background-color: var(--footerColor);
     padding: 3% 8% 5% 8%;
-    justify-content: space-between;
-}
 
-footer ul,
-footer p {
-    color: white;
 }
 
 .left-container {
@@ -21,26 +17,29 @@ footer p {
     justify-content: space-between;
 }
 
-.Footer .grid {
+
+.footer-collections-grid {
     display: grid;
+    list-style: none;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 30px;
     row-gap: 20px;
-
 }
 
-.Footer ul {
-    list-style: none;
+footer ul,
+footer p {
+    color: white;
 }
 
-.Footer span {
+footer span {
     text-decoration: underline;
 }
+
 
 /* Hovering */
 
 .social-media-container *:hover,
-.Footer .grid li:hover,
+.footer-collections-grid li:hover,
 span:hover {
     color: var(--primaryColor);
     transition-duration: 0.3s;

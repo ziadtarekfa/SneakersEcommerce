@@ -1,6 +1,6 @@
-import CategoryCard from "../components/CategoryCard";
-import FilterBar from "../components/FilterBar";
-import ProductCard from '../components/ProductCard';
+import { CategoryCard, FilterBar, ProductCard } from './index';
+
+import hello from '../assets/Headers/collections-header.jpg';
 
 import '../pagesStyles/MenCollection.css';
 
@@ -8,7 +8,7 @@ const MenCollection = () => {
     return (
         <div>
 
-            <CategoryCard category="Products" />
+            <CategoryCard category="Products" categoryBgImage={hello} />
             <FilterBar />
             <div className="products">
                 <ProductCard />

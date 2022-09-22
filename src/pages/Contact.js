@@ -1,8 +1,10 @@
-
 import CategoryCard from '../components/CategoryCard';
-import '../pagesStyles/Contact.css';
+
 import { IoLocation, IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
+
+import '../pagesStyles/Contact.css';
+
 const Contact = () => {
     return (
         <div>

@@ -1,8 +1,4 @@
-import CategoryCard from "../components/CategoryCard";
-import FilterBar from "../components/FilterBar";
-import ProductCard from '../components/ProductCard';
-
-
+import { CategoryCard, FilterBar, ProductCard } from './index';
 import '../pagesStyles/MenCollection.css';
 
 const MenCollection = () => {

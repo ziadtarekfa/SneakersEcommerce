@@ -1,38 +1,39 @@
 import '../ComponentsStyles/FilterBar.css';
 const FilterBar = () => {
+
+    const colors = ["Color", "beige", "black", "blue", "brown", "gray", "green", "orange", "peach",
+        "pink", "purple", "red", "turquoise", "white"];
+
+    const brands = ["Brand", "Adidas", "Asics", "Bershka", "Jordan", "Nike", "Puma", "Reebok", "Vans"];
+
     return (
         <div className="filter-bar">
             <section className='filter-products-container'>
 
                 <h1>Filter Products:</h1>
                 <select>
-                    <option>Color</option>
-                    <option>beige</option>
-                    <option>black</option>
-                    <option>blue</option>
-                    <option>brown</option>
-                    <option>gray</option>
-                    <option>green</option>
-                    <option>orange</option>
-                    <option>peach</option>
-                    <option>pink</option>
-                    <option>purple</option>
-                    <option>red</option>
-                    <option>turquoise</option>
-                    <option>white</option>
+                    {
+                        colors.map((color) => {
+                            return (
+                                <option key={color}>{color}</option>
+                            );
+                        })
+                    }
+
                 </select>
+
                 <select>
-                    <option>Brand</option>
-                    <option>Adidas</option>
-                    <option>Asics</option>
-                    <option>Bershka</option>
-                    <option>Jordan</option>
-                    <option>Nike</option>
-                    <option>Puma</option>
-                    <option>Reebok</option>
-                    <option>Vans</option>
+                    {
+                        brands.map((brand) => {
+                            return (
+                                <option key={brand}>{brand}</option>
+                            );
+                        })
+                    }
+
                 </select>
             </section>
+
             <section className='sort-products-container'>
                 <h1>Sort Products:</h1>
                 <select>

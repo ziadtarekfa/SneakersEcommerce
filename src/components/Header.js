@@ -1,12 +1,13 @@
-import '../ComponentsStyles/Header.css';
+
 import logo from '../assets/icons/logo.svg';
 import cart from '../assets/icons/icon-cart.svg';
 import { Link, useNavigate } from 'react-router-dom';
+
+import '../ComponentsStyles/Header.css';
 import React from 'react';
 
 const Header = () => {
     let navigate = useNavigate();
-    // const loginBtn = document.getElementsByClassName("loginBtn")[0];
     function handleClick() {
         navigate("/login");
     }
@@ -36,11 +37,14 @@ const Header = () => {
                         </li>
                     </ul>
                 </nav>
+
                 <div>
                     <img id='cart' src={cart} alt="cart icon" />
-                    <button onClick={handleClick}>Login</button>
+                    <button onClick={handleClick} className="default-button header-button" >Login</button>
                 </div>
+
             </header>
+
             <hr className='header-hr' />
         </React.Fragment>
     );
