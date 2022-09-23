@@ -1,12 +1,12 @@
 import { CategoryCard, FilterBar, ProductCard } from './index';
-import '../pagesStyles/MenCollection.css';
+
 
 const MenCollection = () => {
     return (
-        <div>
+        <main>
             <CategoryCard category="Men" />
             <FilterBar />
-            <div className="products">
+            <div className="default-products">
                 <ProductCard />
                 <ProductCard />
                 <ProductCard />
@@ -17,7 +17,7 @@ const MenCollection = () => {
                 <ProductCard />
                 <ProductCard />
             </div>
-        </div>
+        </main>
 
     );
 }

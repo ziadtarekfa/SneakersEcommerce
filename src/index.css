@@ -6,7 +6,7 @@
 }
 
 :root {
-    --backgroundColor: white;
+    --backgroundColor: #F7F8FD;
     --primaryColor: #FF7D1A;
     --buttonHoverColor: #FFEDE0;
     --lightGreyColor: #B5B6BA;
@@ -14,9 +14,7 @@
 }
 
 body {
-    /* background-color: var(--backgroundColor); */
-    background-color: #F7F8FD;
-
+    background-color: white;
 }
 
 .default-button {
@@ -24,7 +22,7 @@ body {
     border: none;
     border-radius: 10px;
     height: 37px;
-    color: var(--backgroundColor);
+    color: white;
     font-size: 17px;
 }
 
@@ -34,4 +32,30 @@ body {
     border: 2px solid var(--primaryColor);
     transition-duration: 0.3s;
     cursor: pointer;
+}
+
+.default-products {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 8% 0 8%;
+    overflow: hidden;
+    row-gap: 5%;
+    column-gap: 2%;
+    padding-bottom: 20%;
+
+}
+
+.default-input {
+    border: none;
+    border-bottom: 2px solid lightgray;
+    padding: 10px 10px 10px 0;
+    font-size: 15px;
+    min-height: 50px;
+    resize: vertical;
+    outline: none;
+}
+
+.default-input:focus {
+    border-color: var(--primaryColor);
 }

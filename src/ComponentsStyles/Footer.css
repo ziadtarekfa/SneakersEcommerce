@@ -26,6 +26,11 @@ footer {
     row-gap: 20px;
 }
 
+.footer-collections-grid a {
+    text-decoration: none;
+    color: white;
+}
+
 footer ul,
 footer p {
     color: white;
@@ -39,7 +44,7 @@ footer span {
 /* Hovering */
 
 .social-media-container *:hover,
-.footer-collections-grid li:hover,
+.footer-collections-grid a:hover,
 span:hover {
     color: var(--primaryColor);
     transition-duration: 0.3s;

@@ -2,6 +2,7 @@
 import { FaFacebookSquare } from 'react-icons/fa';
 import { BsYoutube, BsTwitter, BsInstagram } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
+import { Link } from 'react-router-dom';
 
 import '../ComponentsStyles/Footer.css';
 
@@ -24,12 +25,24 @@ const Footer = () => {
                 </div>
 
                 <ul className='footer-collections-grid'>
-                    <li>Collections</li>
-                    <li>Products</li>
-                    <li>About us</li>
-                    <li>Men</li>
-                    <li>Contact</li>
-                    <li>Women</li>
+                    <li>
+                        <Link to='/collections'>Collections</Link>
+                    </li>
+                    <li>
+                        <Link to='/products'>Products</Link>
+                    </li>
+                    <li>
+                        <Link to='/'>About us</Link>
+                    </li>
+                    <li>
+                        <Link to='/products/men'>Men</Link>
+                    </li>
+                    <li>
+                        <Link to='/contact'>Contact</Link>
+                    </li>
+                    <li>
+                        <Link to='/products/women'>Women</Link>
+                    </li>
                 </ul>
 
                 <p>

@@ -1,9 +1,8 @@
+/* Intro Section */
 .intro-container {
     display: flex;
     margin: 0 8% 0 8%;
-    flex-basis: auto;
-    padding-top: 10%;
-    padding-bottom: 8%;
+    padding: 10% 0 8% 0;
 }
 
 .intro-content-container {
@@ -24,10 +23,6 @@
 .intro-container button {
     width: 54%;
     height: 60px;
-    background-color: var(--primaryColor);
-    color: white;
-    border: none;
-    border-radius: 10px;
     font-size: 17px;
 }
 
@@ -56,60 +51,57 @@
 
 .benefits-heading h2 {
     font-size: 44px;
-
 }
 
 .benefits-content {
     display: flex;
     height: 300px;
-    margin-left: 10px;
-    margin-top: 50px;
+    margin: 50px 0 0 10px;
     padding-bottom: 8%;
 }
 
 /* Products Section */
 
 .products-section {
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-top: 4%;
-    padding-bottom: 7%;
-    background-color: #F7F8FD;
+
+    padding: 4% 8% 7% 8%;
+    background-color: var(--backgroundColor);
 }
 
 .products-section h1 {
     font-size: 44px;
 }
 
-.products-container {
+.products-content {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
-
+    margin-top: 4%;
 }
 
-.products-container+div {
+.products-content+div {
+    /* Button container */
     display: flex;
     justify-content: center;
 }
 
 .products-section button {
-    width: 17%;
-    height: 60px;
 
     background-color: var(--buttonHoverColor);
-    color: var(--primaryColor);
-    font-weight: bold;
-    margin-top: 5%;
     border: 1px solid var(--primaryColor);
     border-radius: 10px;
+    color: var(--primaryColor);
     font-size: 17px;
+    font-weight: bold;
+    width: 17%;
+    height: 60px;
+    margin-top: 5%;
+
 }
 
 .products-section button:hover {
-    border: none;
     background-color: var(--primaryColor);
+    border: none;
     color: white;
-    transition-duration: 0.5s;
     cursor: pointer;
+    transition-duration: 0.5s;
 }

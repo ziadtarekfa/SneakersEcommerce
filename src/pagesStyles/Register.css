@@ -1,12 +1,10 @@
 .register {
+    display: flex;
+    justify-content: center;
     background-image: url('../assets/auth-bg.jpg');
     background-size: cover;
     height: calc(100vh + 40px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 2% 0 2% 0;
-
 }
 
 .register-container {
@@ -14,36 +12,12 @@
     height: 100%;
     width: 40%;
     padding: 4% 3% 4% 3%;
-
 }
 
 .register-form {
     display: flex;
     flex-direction: column;
     margin-top: 8%;
-}
-
-.register-form input {
-    border: none;
-    border-bottom: 2px solid lightgray;
-    padding: 10px 10px 10px 0;
-    font-size: 15px;
-    min-height: 50px;
-    resize: vertical;
-    outline: none;
-    margin-top: 3%;
-
-}
-
-.register-form p {
-    margin-top: 10%;
-    font-size: 14px;
-    color: rgb(118, 120, 127);
-    line-height: 20px;
-}
-
-.register-form span {
-    font-weight: 700;
 }
 
 .register-form div {
@@ -55,20 +29,30 @@
     flex-grow: 0.3;
 }
 
+.register-form input {
+    margin-top: 3%;
+}
+
+.register-form p {
+    margin-top: 10%;
+    font-size: 14px;
+    color: grey;
+    line-height: 20px;
+}
+
+.register-form span {
+    font-weight: 700;
+}
+
 .register-form button {
-    min-height: 40px;
-    color: white;
-    background-color: var(--primaryColor);
-    border: none;
-    font-size: 15px;
     width: 40%;
-    border-radius: 5px;
     margin-top: 7%;
+    min-height: 50px;
 }
 
 .register-form+p {
-    color: rgb(118, 120, 127);
-    margin-top: 15%;
+    color: gray;
+    margin-top: 12%;
 }
 
 .register-container a {
@@ -77,14 +61,5 @@
 }
 
 .register-container a:hover {
-
     border-bottom: 2px solid var(--primaryColor);
-}
-
-.register-form button:hover {
-    background-color: var(--buttonHoverColor);
-    border: 1px solid var(--primaryColor);
-    color: var(--primaryColor);
-    transition-duration: 0.3s;
-    cursor: pointer;
 }

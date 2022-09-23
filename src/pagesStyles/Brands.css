@@ -4,8 +4,7 @@
     grid-template-rows: repeat(2, 1fr);
     column-gap: 4%;
     row-gap: 8%;
-    margin-left: 16%;
-    margin-right: 16%;
-    padding-top: 4%;
-    padding-bottom: 8%;
+    margin: 0 16%;
+    padding: 4% 0 8%;
+
 }

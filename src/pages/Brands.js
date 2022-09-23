@@ -7,7 +7,7 @@ import '../pagesStyles/Brands.css';
 
 const Collections = () => {
     return (
-        <div>
+        <main>
             <CategoryCard category="Collections" />
             <div className='brands-grid'>
                 <BrandCard brandLogo={nike} brandName="NIKE" />
@@ -16,9 +16,8 @@ const Collections = () => {
                 <BrandCard brandLogo={reebok} brandName="REEBOK" />
                 <BrandCard brandLogo={vans} brandName="VANS" />
                 <BrandCard brandLogo={jordan} brandName="JORDAN" />
-
             </div>
-        </div>
+        </main>
     );
 }
 

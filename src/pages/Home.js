@@ -15,12 +15,12 @@ const Home = () => {
     ];
 
     return (
-        <div>
+        <main>
             <div className="intro-container">
                 <section className="intro-content-container">
                     <h1>Discover Your Dream Sneakers</h1>
                     <p>With a wide range of quality and affordable sneakers to choose from, browse through our collections for that sneakers you’ve always wanted.</p>
-                    <button>Explore Products</button>
+                    <button className='default-button'>Explore Products</button>
                 </section>
                 <section className="hero-sneaker-container">
                     <img src={heroSneaker} alt="heroSneaker" />
@@ -41,7 +41,7 @@ const Home = () => {
 
             <section className="products-section">
                 <h1>Products</h1>
-                <div className="products-container">
+                <div className="products-content">
                     <ProductCard />
                     <ProductCard />
                     <ProductCard />
@@ -53,7 +53,7 @@ const Home = () => {
 
             </section>
 
-        </div>
+        </main>
     );
 }
 

@@ -7,7 +7,7 @@ import '../pagesStyles/Contact.css';
 
 const Contact = () => {
     return (
-        <div>
+        <main>
             <CategoryCard category="Contact" />
             <div className='contact-container'>
                 <section className='contact-info'>
@@ -30,16 +30,16 @@ const Contact = () => {
 
                 <section className='contact-form'>
                     <form>
-                        <input placeholder='Name' required></input>
-                        <input placeholder='Email Address' type="email" required></input>
-                        <input placeholder='Title' required></input>
-                        <textarea placeholder='Message' required></textarea>
-                        <button>Submit</button>
+                        <input className='default-input' placeholder='Name' required></input>
+                        <input className='default-input' placeholder='Email Address' type="email" required></input>
+                        <input className='default-input' placeholder='Title' required></input>
+                        <textarea className='default-input' placeholder='Message' required></textarea>
+                        <button className='default-button'>Submit</button>
                     </form>
                 </section>
 
             </div>
-        </div>
+        </main>
     );
 }
 
