@@ -1,48 +1,21 @@
-import { CategoryCard, FilterBar, ProductCard } from './index';
+import ProductsList from './ProductsList';
+import useCollectionFetcher from "../entities/UseCollectionFetcher";
 
-import { useEffect, useState } from 'react';
-import { getDatabase, onValue, ref } from "firebase/database";
-import hello from '../assets/Headers/collections-header.jpg';
+import { Fragment } from 'react';
 
 
 const AllCollections = () => {
 
-    useEffect(() => {
-        getCollection();
-    }, []);
-
-    const [collection, setCollection] = useState([]);
-
-    function getCollection() {
-        const database = getDatabase();
-        const arr = [];
-        onValue(ref(database, 'products/'), (snapshot) => {
-
-            snapshot.forEach((childSnapshot) => {
-                arr.push(childSnapshot);
-            });
-
-            setCollection(arr);
-        });
-    }
+    const { collection, loading } = useCollectionFetcher();
 
     return (
-        <main>
 
-            <CategoryCard category="Products" categoryBgImage={hello} />
-            <FilterBar />
-            <div className="default-products">
-                {
-                    collection.map((product) => {
+        <Fragment>
+            {
+                loading ? <div>Loading</div> : <ProductsList category={"Products"} collection={collection} />
 
-                        return (
-                            <ProductCard product={product.val()} id={product.key} key={product.key} />
-                        );
-                    })
-                }
-            </div>
-
-        </main>
+            }
+        </Fragment>
 
     );
 }

@@ -1,50 +1,19 @@
-import { CategoryCard, FilterBar, ProductCard } from './index';
-
-import { getDatabase, onValue, ref, query, limitToFirst } from "firebase/database";
-import { useEffect, useState } from 'react';
+import useCollectionFetcher from "../entities/UseCollectionFetcher";
+import ProductsList from './ProductsList';
 
 
 
 const MenCollection = () => {
 
-    useEffect(() => {
-        getMenCollection();
-    }, []);
-    const [collection, setCollection] = useState([]);
-
-    function getMenCollection() {
-        const database = getDatabase();
-        const arr = [];
-        onValue(ref(database, 'products/'), (snapshot) => {
-
-            snapshot.forEach((childSnapshot) => {
-
-                if (childSnapshot.val().gender === 'men' || childSnapshot.val().gender === 'both') {
-                    arr.push(childSnapshot);
-                }
-
-            });
-
-            setCollection(arr);
-        });
-    }
+    const { collection, loading } = useCollectionFetcher("men");
 
     return (
-        <main>
-            <CategoryCard category="Men" />
-            <FilterBar />
-            <div className="default-products">
-                {
-                    collection.map((product) => {
-                        return (
-                            <ProductCard product={product.val()} key={product.key} id={product.key} />
-                        );
-                    })
+        <>
+            {
+                loading ? <div>loading</div> : <ProductsList category={"Men"} collection={collection} />
+            }
 
-
-                }
-            </div>
-        </main>
+        </>
 
     );
 }
