@@ -17,6 +17,7 @@
 
 .product-card h6 {
     color: var(--primaryColor);
+    font-size: 13px;
 }
 
 .prices-container {
@@ -27,9 +28,16 @@
 }
 
 .discount-percentage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--primaryColor);
     font-weight: bold;
     border-radius: 5px;
     padding: 5px;
     background-color: var(--buttonHoverColor);
+}
+
+.product-card:hover {
+    cursor: pointer;
 }

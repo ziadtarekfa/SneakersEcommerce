@@ -1,6 +1,38 @@
 import { Link } from 'react-router-dom';
 import '../pagesStyles/Register.css';
+import { app } from '../config/firebaseConfig';
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import { getDatabase as database, ref, set } from 'firebase/database';
 const Login = () => {
+
+    const auth = getAuth(app);
+
+    let email, password;
+
+    const createUser = () => {
+        createUserWithEmailAndPassword(auth, email, password).then(userCredential => {
+            // Account created successfully
+
+            // console.log("account created successfullu")
+
+
+        }).catch(error => {
+            //error occurred
+
+        });
+    }
+    // const writeUserData = (userID) => {
+
+    //     set(ref(database, 'users/' + userID), {
+    //         username: "ziad",
+    //         email: "hello@gmail.com"
+    //     });
+    // }
+
+
+
+
+
     return (
         <div className="register">
             <div className="register-container">
@@ -10,7 +42,6 @@ const Login = () => {
                         <input className='default-input' placeholder="First Name" required></input>
                         <input className='default-input' placeholder="Last Name" required ></input>
                     </div>
-                    <input className='default-input' placeholder="username" required></input>
                     <input className='default-input' placeholder="Email" type="email" required></input>
                     <div>
                         <input className='default-input' placeholder="Password" required></input>

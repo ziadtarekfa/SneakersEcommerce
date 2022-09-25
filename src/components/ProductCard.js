@@ -1,18 +1,24 @@
-import ProductImage from '../assets/images/image-product-1.jpg';
+
+
+import { useNavigate } from 'react-router-dom';
 import '../ComponentsStyles/ProductCard.css';
 
-const ProductCard = () => {
-    return (
-        <div className="product-card">
+const ProductCard = ({ product, id }) => {
 
-            <img src={ProductImage} alt='product' />
-            <h6>GIVENCHY</h6>
-            <h2>Urban Street Leather Sneakers</h2>
+    let navigate = useNavigate();
+    function handleProductCardClick() {
+        navigate(`/products/${id}`);
+    }
+    return (
+        <div className="product-card" onClick={handleProductCardClick}>
+            <img src={product.image} alt='product' />
+            <h6>{product.brand}</h6>
+            <h2>{product.model}</h2>
             <div className='prices-container'>
-                <p style={{ 'fontWeight': 'bold', }}>$450</p>
-                <p style={{ 'color': '#76787F', 'textDecoration': 'line-through' }}>$650</p>
+                <p style={{ 'fontWeight': 'bold', }}>{product.oldPrice}</p>
+                <p style={{ 'color': '#76787F', 'textDecoration': 'line-through' }}>{product.newPrice}</p>
                 <div className='discount-percentage-container'>
-                    <p>30%</p>
+                    <p>{product.discount}</p>
                 </div>
             </div>
 

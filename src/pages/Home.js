@@ -3,6 +3,9 @@ import heroSneaker from '../assets/images/hero-sneaker.png';
 import BenefitCard from '../components/BenefitCard';
 import ProductCard from '../components/ProductCard';
 
+import { useEffect, useState } from 'react';
+import { getDatabase, onValue, ref, query, limitToFirst } from "firebase/database";
+
 import { truck, handHoldingDollar, star } from './index'
 import '../pagesStyles/Home.css';
 
@@ -13,6 +16,27 @@ const Home = () => {
         "The sneakers available are just within the reach of your pocket. No hidden cost. No addtional fee required other than what’s stated.",
         "From your favorite brand to the latest trends, we sell sneakers only of the finest and durable materials you’d ever find."
     ];
+
+    useEffect(() => {
+        getCollection();
+    }, []);
+
+    const [collection, setCollection] = useState([]);
+
+    function getCollection() {
+        const database = getDatabase();
+        const arr = [];
+        const firstFourProducts = query(ref(database, 'products/'), limitToFirst(4));
+
+        onValue(firstFourProducts, (snapshot) => {
+
+            snapshot.forEach((childSnapshot) => {
+                arr.push(childSnapshot);
+            });
+
+            setCollection(arr);
+        });
+    }
 
     return (
         <main>
@@ -42,10 +66,14 @@ const Home = () => {
             <section className="products-section">
                 <h1>Products</h1>
                 <div className="products-content">
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
+                    {
+                        collection.map((product) => {
+
+                            return (
+                                <ProductCard product={product.val()} id={product.key} key={product.key} />
+                            );
+                        })
+                    }
                 </div>
                 <div>
                     <button>Explore More</button>

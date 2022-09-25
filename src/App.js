@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FilterBar from './components/FilterBar';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (
@@ -26,9 +27,11 @@ function App() {
           <Route path='/products' element={<AllCollections />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/products/men' element={<MenCollection />} />
+          <Route path='/products/:id' element={<ProductDetails />} />
           <Route path='/products/women' element={<WomenCollection />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+
           <Route path='*' element={<FilterBar />}
 
           // page not found? 

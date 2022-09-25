@@ -1,24 +1,45 @@
 import { CategoryCard, FilterBar, ProductCard } from './index';
 
+import { useEffect, useState } from 'react';
+import { getDatabase, onValue, ref } from "firebase/database";
 import hello from '../assets/Headers/collections-header.jpg';
 
 
-const MenCollection = () => {
+const AllCollections = () => {
+
+    useEffect(() => {
+        getCollection();
+    }, []);
+
+    const [collection, setCollection] = useState([]);
+
+    function getCollection() {
+        const database = getDatabase();
+        const arr = [];
+        onValue(ref(database, 'products/'), (snapshot) => {
+
+            snapshot.forEach((childSnapshot) => {
+                arr.push(childSnapshot);
+            });
+
+            setCollection(arr);
+        });
+    }
+
     return (
         <main>
 
             <CategoryCard category="Products" categoryBgImage={hello} />
             <FilterBar />
             <div className="default-products">
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                {
+                    collection.map((product) => {
+
+                        return (
+                            <ProductCard product={product.val()} id={product.key} key={product.key} />
+                        );
+                    })
+                }
             </div>
 
         </main>
@@ -26,4 +47,4 @@ const MenCollection = () => {
     );
 }
 
-export default MenCollection;
+export default AllCollections;
