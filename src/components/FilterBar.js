@@ -29,13 +29,38 @@ const FilterBar = ({ initialCollection, setCollection, }) => {
         }
     }
 
+    function filterAccordingToColor() {
+        const colorSelect = document.getElementById('select-color');
+        const selectedColor = colorSelect.value;
+        let filteredCollection = [];
+        if (selectedColor.toLowerCase() !== 'color') {
+            initialCollection.forEach(childSnapshot => {
+
+                const colorList = childSnapshot.val().colors;
+
+
+                for (let i = 0; i < colorList.length; i++) {
+                    if (colorList[i] === selectedColor) {
+                        filteredCollection.push(childSnapshot);
+                        break;
+                    }
+                }
+
+            });
+            setCollection(filteredCollection);
+        }
+        else {
+            setCollection(initialCollection);
+        }
+    }
+
 
     return (
         <div className="filter-bar">
             <section className='filter-products-container'>
 
                 <h1>Filter Products:</h1>
-                <select>
+                <select id='select-color' onChange={filterAccordingToColor}>
                     {
                         colors.map((color) => {
                             return (
