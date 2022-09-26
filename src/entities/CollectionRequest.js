@@ -1,7 +1,7 @@
 
-import { getDatabase, onValue, ref } from "firebase/database";
+import { getDatabase, onValue, ref, query, limitToFirst } from "firebase/database";
 
-function getCollection(filter) {
+function getCollection(filter, limit) {
 
 
 
@@ -9,7 +9,14 @@ function getCollection(filter) {
 
         const database = getDatabase();
         const arr = [];
-        onValue(ref(database, 'products/'), (snapshot) => {
+        let myQuery;
+        if (limit) {
+            myQuery = query(ref(database, 'products/'), limitToFirst(limit));
+        }
+        else {
+            myQuery = query(ref(database, 'products/'));
+        }
+        onValue(myQuery, (snapshot) => {
 
             snapshot.forEach((childSnapshot) => {
 

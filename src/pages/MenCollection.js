@@ -1,4 +1,4 @@
-import useCollectionFetcher from "../entities/UseCollectionFetcher";
+import useCollectionFetcher from "../entities/useCollectionFetcher";
 import ProductsList from './ProductsList';
 
 

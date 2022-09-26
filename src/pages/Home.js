@@ -8,6 +8,8 @@ import { getDatabase, onValue, ref, query, limitToFirst } from "firebase/databas
 
 import { truck, handHoldingDollar, star } from './index'
 import '../pagesStyles/Home.css';
+import useCollectionFetcher from '../entities/useCollectionFetcher';
+import ProductsList from './ProductsList';
 
 const Home = () => {
 
@@ -16,6 +18,7 @@ const Home = () => {
         "The sneakers available are just within the reach of your pocket. No hidden cost. No addtional fee required other than what’s stated.",
         "From your favorite brand to the latest trends, we sell sneakers only of the finest and durable materials you’d ever find."
     ];
+
 
     useEffect(() => {
         getCollection();
@@ -73,6 +76,7 @@ const Home = () => {
                                 <ProductCard product={product.val()} id={product.key} key={product.key} />
                             );
                         })
+                        // loading ? <div>Loading</div> : <ProductsList collection={collection} />
                     }
                 </div>
                 <div>

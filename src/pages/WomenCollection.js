@@ -1,5 +1,5 @@
 import ProductsList from './ProductsList';
-import useCollectionFetcher from "../entities/UseCollectionFetcher";
+import useCollectionFetcher from "../entities/useCollectionFetcher";
 const WomenCollection = () => {
 
     const { collection, loading } = useCollectionFetcher("women");

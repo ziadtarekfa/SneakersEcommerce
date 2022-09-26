@@ -8,8 +8,24 @@ const ProductDetails = () => {
 
 
     const { id } = useParams();
+    useEffect(() => {
+        getProductById();
+    }, []);
 
     const [product, setProduct] = useState("");
+
+    const [counter, setCounter] = useState(0);
+
+    function handleMinusBtn() {
+        if (counter > 0) {
+            setCounter(counter - 1);
+        }
+    }
+    function handlePlusBtn() {
+        setCounter(counter + 1);
+    }
+
+
 
 
 
@@ -22,11 +38,6 @@ const ProductDetails = () => {
             setProduct(data);
         });
     }
-
-    useEffect(() => {
-        getProductById();
-    }, []);
-
 
 
 
@@ -51,15 +62,15 @@ const ProductDetails = () => {
                 <p style={{ 'color': '#76787F', 'textDecoration': 'line-through', 'fontWeight': 'bold' }} >{product.oldPrice}</p>
                 <div className='add-to-cart-container'>
                     <div className='counter-container'>
-                        <button >-</button>
-                        <p>0</p>
-                        <button>+</button>
+                        <button onClick={handleMinusBtn}>-</button>
+                        <p >{counter}</p>
+                        <button onClick={handlePlusBtn}>+</button>
                     </div>
                     <button className='default-button'>Add to cart</button>
                 </div>
 
             </div>
-        </main>
+        </main >
     );
 }
 
