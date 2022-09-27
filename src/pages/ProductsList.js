@@ -7,7 +7,7 @@ const ProductsList = ({ collection, category }) => {
     return (
         <main>
             <CategoryCard category={category} />
-            <FilterBar initialCollection={collection} collectionState={collectionState} setCollection={setCollection} />
+            <FilterBar initialCollection={collection} setCollection={setCollection} />
             <div className="default-products">
                 {
 

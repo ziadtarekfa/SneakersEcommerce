@@ -1,5 +1,5 @@
 import '../ComponentsStyles/FilterBar.css';
-const FilterBar = ({ initialCollection, setCollection, collectionState }) => {
+const FilterBar = ({ initialCollection, setCollection }) => {
 
 
     const colors = ["Color", "beige", "black", "blue", "brown", "gray", "green", "orange", "peach",
@@ -8,102 +8,66 @@ const FilterBar = ({ initialCollection, setCollection, collectionState }) => {
     const brands = ["Brand", "Adidas", "Asics", "Bershka", "Jordan", "Nike", "Puma", "Reebok", "Vans"];
 
 
+    let filteredCollection;
 
     function filterCollection() {
         const brandSelect = document.getElementById('select-brand');
         const colorSelect = document.getElementById('select-color');
-        const selectedBrand = brandSelect.value;
-        const selectedColor = colorSelect.value;
+        const selectedBrand = brandSelect.value.toLowerCase();
+        const selectedColor = colorSelect.value.toLowerCase();
 
-        let filteredCollection = [];
+        filteredCollection = [];
 
-        if (selectedBrand.toLowerCase() === 'brand' && selectedColor.toLowerCase() === 'color') {
+        if (selectedBrand === 'brand' && selectedColor === 'color') {
+            // no change 
             filteredCollection = initialCollection;
-            setCollection(initialCollection);
+        }
+        else if (selectedBrand === 'brand' && selectedColor !== 'color') {
+            // filter based on color ONLY
+            initialCollection.forEach(childSnapshot => {
+                filterWithColor(selectedColor, childSnapshot);
+            });
+        }
+        else if (selectedBrand !== 'brand' && selectedColor === 'color') {
+            //filter based on brand ONLY
+            filterWithBrand(selectedBrand);
         }
         else {
-            console.log(selectedColor);
-            // loop
+            //filter based on color AND brand
             initialCollection.forEach(childSnapshot => {
-
                 const product = childSnapshot.val();
-                if (selectedBrand.toLowerCase() !== 'brand') {
-
-                    if (product.brand.toLowerCase() === selectedBrand.toLowerCase()) {
-
-                        if (selectedColor.toLowerCase() !== 'color') {
-                            for (let i = 0; i < product.colors.length; i++) {
-                                if (product.colors[i] === selectedColor) {
-                                    filteredCollection.push(childSnapshot);
-                                    break;
-                                }
-                            }
-                        }
-                        else {
-                            filteredCollection.push(childSnapshot);
-                        }
-
-                    }
+                if (product.brand.toLowerCase() === selectedBrand) {
+                    filterWithColor(selectedColor, childSnapshot);
                 }
-                else {
-                    for (let i = 0; i < product.colors.length; i++) {
-                        if (product.colors[i] === selectedColor.toLowerCase()) {
-                            filteredCollection.push(childSnapshot);
-                            break;
-                        }
-                    }
-                }
-
-
             });
-            // end loop
-            setCollection(filteredCollection);
         }
+
+        setCollection(filteredCollection);
+
     }
 
-    // const brandSelect = document.getElementById('select-brand');
-    // const brand = brandSelect.value;
-    // let filteredCollection = [];
+    function filterWithColor(selectedColor, childSnapshot) {
 
-    // if (brand.toLowerCase() !== 'brand') {
-    //     initialCollection.forEach(childSnapshot => {
+        const product = childSnapshot.val();
+        for (let i = 0; i < product.colors.length; i++) {
+            if (product.colors[i] === selectedColor) {
+                filteredCollection.push(childSnapshot);
+                break;
+            }
+        }
 
-    //         const product = childSnapshot.val();
+    }
 
-    //         if (product.brand.toLowerCase() === brand.toLowerCase()) {
-    //             filteredCollection.push(childSnapshot);
-    //         }
-    //     });
-    //     setCollection(filteredCollection);
-    // }
-    // else {
-    //     setCollection(initialCollection);
-    // }
+    function filterWithBrand(selectedBrand, childSnapshot) {
 
-    // function filterAccordingToColor() {
-    //     const colorSelect = document.getElementById('select-color');
-    //     const selectedColor = colorSelect.value;
-    //     let filteredCollection = [];
-    //     if (selectedColor.toLowerCase() !== 'color') {
-    //         initialCollection.forEach(childSnapshot => {
+        initialCollection.forEach(childSnapshot => {
+            const product = childSnapshot.val();
+            if (product.brand.toLowerCase() === selectedBrand) {
+                filteredCollection.push(childSnapshot);
+            }
+        });
+    }
 
-    //             const colorList = childSnapshot.val().colors;
-
-
-    //             for (let i = 0; i < colorList.length; i++) {
-    //                 if (colorList[i] === selectedColor) {
-    //                     filteredCollection.push(childSnapshot);
-    //                     break;
-    //                 }
-    //             }
-
-    //         });
-    //         setCollection(filteredCollection);
-    //     }
-    //     else {
-    //         setCollection(initialCollection);
-    //     }
-    //   }
 
 
     return (
