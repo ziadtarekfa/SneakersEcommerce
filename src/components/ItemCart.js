@@ -1,25 +1,22 @@
 import '../ComponentsStyles/itemCart.css';
-import img from '../assets/images/image-product-1.jpg';
 import { BsTrash } from 'react-icons/bs';
 
-const ItemCart = () => {
-    const id = 1;
+const ItemCart = ({ cartItem }) => {
     return (
         <div className="cart-item">
-
             <div className="cart-item-image">
-                <img src={img} alt="hello" />
+                <img src={cartItem.productImage} alt="productImage" />
             </div>
             <div className="cart-item-content">
                 <div>
-                    <a href={`/products/${id}`}>Smash Leather Perf Sneakers</a>
+                    <p>{cartItem.productModel}</p>
                     <BsTrash />
                     {/* #76787f */}
 
                 </div>
                 <div>
-                    <span>30x1</span>
-                    <p>$30</p>
+                    <span>{`${cartItem.productPrice}x${cartItem.productQuantity}`}</span>
+                    <p>{`$${cartItem.productPrice * cartItem.productQuantity}`}</p>
                 </div>
             </div>
 
