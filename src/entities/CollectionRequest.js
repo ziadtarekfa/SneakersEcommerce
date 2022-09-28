@@ -23,6 +23,7 @@ function getCollection(filter, limit) {
                 if (filter) {
                     if (childSnapshot.val().gender === filter || childSnapshot.val().gender === 'both') {
                         arr.push(childSnapshot);
+
                     }
                 }
 

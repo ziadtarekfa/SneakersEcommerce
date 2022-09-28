@@ -1,5 +1,5 @@
 import '../ComponentsStyles/FilterBar.css';
-const FilterBar = ({ initialCollection, setCollection }) => {
+const FilterBar = ({ initialCollection, collectionState, setCollection }) => {
 
 
     const colors = ["Color", "beige", "black", "blue", "brown", "gray", "green", "orange", "peach",
@@ -15,6 +15,7 @@ const FilterBar = ({ initialCollection, setCollection }) => {
         const colorSelect = document.getElementById('select-color');
         const selectedBrand = brandSelect.value.toLowerCase();
         const selectedColor = colorSelect.value.toLowerCase();
+        const sortMode = document.getElementById('sort-select').value;
 
         filteredCollection = [];
 
@@ -35,14 +36,34 @@ const FilterBar = ({ initialCollection, setCollection }) => {
         else {
             //filter based on color AND brand
             initialCollection.forEach(childSnapshot => {
-                const product = childSnapshot.val();
-                if (product.brand.toLowerCase() === selectedBrand) {
+                if (childSnapshot.val().brand.toLowerCase() === selectedBrand) {
                     filterWithColor(selectedColor, childSnapshot);
                 }
             });
         }
 
-        setCollection(filteredCollection);
+        if (sortMode === 'Price,low-high') {
+            const sortedList = [...collectionState]; //snapshot
+            sortedList.sort(function (a, b) {
+                if (a.val().newPrice > b.val().newPrice) return 1;
+                if (a.val().newPrice < b.val().newPrice) return -1;
+                return 0;
+            });
+            console.log(sortedList);
+            setCollection(sortedList);
+        }
+        else if (sortMode === 'Price,high-low') {
+            const sortedList = [...collectionState];
+            sortedList.sort(function (a, b) {
+                if (a.val().newPrice > b.val().newPrice) return 1;
+                if (a.val().newPrice < b.val().newPrice) return -1;
+                return 0;
+            });
+            setCollection(sortedList.reverse());
+        }
+        else if (sortMode === 'Newest') {
+            setCollection(filteredCollection);
+        }
 
     }
 
@@ -55,10 +76,9 @@ const FilterBar = ({ initialCollection, setCollection }) => {
                 break;
             }
         }
-
     }
 
-    function filterWithBrand(selectedBrand, childSnapshot) {
+    function filterWithBrand(selectedBrand) {
 
         initialCollection.forEach(childSnapshot => {
             const product = childSnapshot.val();
@@ -67,8 +87,6 @@ const FilterBar = ({ initialCollection, setCollection }) => {
             }
         });
     }
-
-
 
     return (
         <div className="filter-bar">
@@ -100,7 +118,7 @@ const FilterBar = ({ initialCollection, setCollection }) => {
 
             <section className='sort-products-container'>
                 <h1>Sort Products:</h1>
-                <select>
+                <select id='sort-select' onChange={filterCollection}>
                     <option>Newest</option>
                     <option>Price,low-high</option>
                     <option>Price,high-low</option>
