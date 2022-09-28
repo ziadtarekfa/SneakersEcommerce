@@ -6,13 +6,36 @@ import { getDatabase, ref, onValue } from "firebase/database";
 
 const ProductDetails = () => {
 
+    const [loading, isLoading] = useState(true);
+    function getProductById() {
+        const db = getDatabase();
+        const myRef = ref(db, `products/${id}`);
+
+        onValue(myRef, (snapshot) => {
+            const data = snapshot.val();
+            setProduct(data);
+            isLoading(false);
+        });
+    }
 
     const { id } = useParams();
     useEffect(() => {
         getProductById();
     }, []);
 
+    // useEffect(() => {
+
+    // });
+
+
+
     const [product, setProduct] = useState("");
+
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart == null) {
+        cart = [];
+    }
+
 
     const [counter, setCounter] = useState(0);
 
@@ -24,53 +47,56 @@ const ProductDetails = () => {
     function handlePlusBtn() {
         setCounter(counter + 1);
     }
+    function addToCart() {
+        const cartItem = {
+            productImage: product.image,
+            productModel: product.model,
+            productPrice: product.newPrice,
+            productQuantity: counter
+        }
 
-
-
-
-
-    function getProductById() {
-        const db = getDatabase();
-        const myRef = ref(db, `products/${id}`);
-
-        onValue(myRef, (snapshot) => {
-            const data = snapshot.val();
-            setProduct(data);
-        });
+        cart.push(cartItem);
+        localStorage.setItem("cart", JSON.stringify(cart));
     }
 
 
 
     return (
-        <main className="product-details">
-            <div>
-                <img src={product.image} alt='productImage' />
-            </div>
-            <div className='product-details-content'>
+        <>
+            {
+                loading ? <div>loading</div> :
 
-                <h2>{product.brand}</h2>
-                <h1>{product.model}</h1>
-                <p className='description'>{product.description}</p>
+                    <main className="product-details">
+                        <div>
+                            <img src={product.image} alt='productImage' />
+                        </div>
+                        <div className='product-details-content'>
 
-                <div className='new-price-container'>
-                    <p className='new-price'>{`$${product.newPrice}`}</p>
-                    <div className='discount-percentage-container'>
-                        <p>{`${product.discount}%`}</p>
-                    </div>
-                </div>
+                            <h2>{product.brand}</h2>
+                            <h1>{product.model}</h1>
+                            <p className='description'>{product.description}</p>
 
-                <p style={{ 'color': '#76787F', 'textDecoration': 'line-through', 'fontWeight': 'bold' }} >{`$${product.oldPrice}`}</p>
-                <div className='add-to-cart-container'>
-                    <div className='counter-container'>
-                        <button onClick={handleMinusBtn}>-</button>
-                        <p >{counter}</p>
-                        <button onClick={handlePlusBtn}>+</button>
-                    </div>
-                    <button className='default-button'>Add to cart</button>
-                </div>
+                            <div className='new-price-container'>
+                                <p className='new-price'>{`$${product.newPrice}`}</p>
+                                <div className='discount-percentage-container'>
+                                    <p>{`${product.discount}%`}</p>
+                                </div>
+                            </div>
 
-            </div>
-        </main >
+                            <p style={{ 'color': '#76787F', 'textDecoration': 'line-through', 'fontWeight': 'bold' }} >{`$${product.oldPrice}`}</p>
+                            <div className='add-to-cart-container'>
+                                <div className='counter-container'>
+                                    <button onClick={handleMinusBtn}>-</button>
+                                    <p >{counter}</p>
+                                    <button onClick={handlePlusBtn}>+</button>
+                                </div>
+                                <button className='default-button' onClick={addToCart}>Add to cart</button>
+                            </div>
+
+                        </div>
+                    </main >
+            }
+        </>
     );
 }
 

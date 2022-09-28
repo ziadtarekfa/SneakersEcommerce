@@ -1,0 +1,25 @@
+.cart-item {
+    display: flex;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.cart-item-image>img {
+    max-width: 100%;
+}
+
+.cart-item-content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.cart-item-content div {
+    display: flex;
+    justify-content: space-between;
+}

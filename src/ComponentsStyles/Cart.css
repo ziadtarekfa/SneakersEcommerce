@@ -1,0 +1,21 @@
+.cart {
+    background-color: #F7F8FD;
+    position: absolute;
+    min-height: 250px;
+    width: 200px;
+    left: 70%;
+    top: 90px;
+    min-width: 400px;
+    border-radius: 10px;
+
+}
+
+.cart>div {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.total-container {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,4 +1,5 @@
 import '../ComponentsStyles/FilterBar.css';
+
 const FilterBar = ({ initialCollection, collectionState, setCollection }) => {
 
 
@@ -115,6 +116,7 @@ const FilterBar = ({ initialCollection, collectionState, setCollection }) => {
 
                 </select>
             </section>
+
 
             <section className='sort-products-container'>
                 <h1>Sort Products:</h1>
