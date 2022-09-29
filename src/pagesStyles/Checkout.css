@@ -1,0 +1,82 @@
+.checkout {
+    display: flex;
+    padding: 5% 14% 5% 10%;
+    height: 700px;
+
+}
+
+.checkout input {
+    display: block;
+    /* width: 100%; */
+    background: transparent;
+}
+
+.shipping-info {
+    display: flex;
+    background-color: #F9F9F9;
+    flex-direction: column;
+    flex-grow: 0.6;
+    padding: 20px;
+    justify-content: space-between;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.order-summary {
+    flex-grow: 0.3;
+    margin-left: 5%;
+    height: 70%;
+
+
+}
+
+.order-summary aside {
+    background-color: #F9F9F9;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 20px 20px 40px 20px;
+    margin-top: 20px;
+    height: 100%;
+}
+
+.checkout .containerr {
+    display: flex;
+
+
+}
+
+.containerr>:first-child {
+    margin-right: 20px;
+}
+
+.containerr input {
+    width: 100%;
+}
+
+.checkout .btn-container {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.checkout button {
+    height: 50px;
+    border-radius: 5px;
+    width: 33%;
+}
+
+.bottom-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    margin-top: 20px;
+    padding-right: 15px;
+}
+
+.bottom-container>div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+
+}
