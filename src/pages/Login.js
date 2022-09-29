@@ -3,33 +3,29 @@ import { app } from '../config/firebaseConfig';
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { getDatabase as database, ref, set } from 'firebase/database';
 import '../pagesStyles/Login.css';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
-
+    let navigate = useNavigate();
     const auth = getAuth(app);
 
-    // const writeUserData = (userID) => {
 
-    //     set(ref(database, 'users/'), {
-    //         username: "ziad",
-    //         email: "hello@gmail.com"
-    //     });
-    // }
 
-    // const signInUser = () => {
-    //     const email = document.getElementById("email").value;
-    //     const password = document.getElementById("password").value;
-    //     console.log(email + " " + password);
-    //     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-    //         //signed in
-    //         console.log("signed in");
-    //         console.log(auth.currentUser.uid);
-    //         writeUserData(auth.currentUser.uid);
-    //     }).catch((error) => {
-    //         // error occurred
 
-    //         console.log(error.message);
-    //     });
-    // }
+    const signInUser = () => {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        console.log(email + " " + password);
+        signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+            //signed in
+            console.log("signed in");
+            console.log(auth.currentUser.uid);
+            navigate('/');
+            // writeUserData(auth.currentUser.uid);
+        }).catch((error) => {
+            // error occurred
+            console.log(error.message);
+        });
+    }
 
     return (
         <main className="login">
@@ -40,7 +36,7 @@ const Login = () => {
                     <input id='password' className='default-input' placeholder="Password" required></input>
 
                 </form>
-                <button className='default-button'>Login</button>
+                <button className='default-button' onClick={signInUser}>Login</button>
                 <div>
                     <Link to='/'>FORGET PASSWORD?</Link>
                     <Link to='/register'>CREATE NEW ACCOUNT</Link>
