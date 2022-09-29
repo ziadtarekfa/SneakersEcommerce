@@ -1,8 +1,11 @@
 import '../pagesStyles/Checkout.css';
 import ItemCart from '../components/ItemCart';
+import countriesData from '../config/countries.json';
 const Checkout = () => {
 
     const cart = JSON.parse(localStorage.getItem('cart'));
+    // const countries = JSON.parse(countriesData);
+    // console.log(countries);
     return (
         <main className='checkout'>
             <div className='shipping-info'>
@@ -18,14 +21,29 @@ const Checkout = () => {
                     <input placeholder='Country' className='default-input'></input>
                     <input placeholder='Postal code' className='default-input'></input>
                 </div>
-                <div className='btn-container'>
+                {/* <div className='btn-container'>
                     <button className='default-button'>Proceed to Payment</button>
-                </div>
+                </div> */}
 
-                <h3>Payment Details</h3>
+                <h3 style={{ 'marginTop': '50px' }}>Payment Details</h3>
                 <hr />
                 <div className='payment-container'>
-
+                    <div>
+                        {/* <label for='credit-card-number' >Card Number</label> */}
+                        <input id='credit-card-number' placeholder='1234 1234 1234 1234'></input>
+                        {/* <label for='expiry-date'>Expiration</label> */}
+                        <input id='expiry-date' placeholder='MM / YY'></input>
+                        {/* <label for='cvc'>CVC</label> */}
+                        <input id="cvc" placeholder='CVC'></input>
+                    </div>
+                    <select>
+                        <option>Egypt</option>
+                        <option>Egypt</option>
+                        <option>Egypt</option>
+                        <option>Egypt</option>
+                        <option>Egypt</option>
+                    </select>
+                    <button>Pay Now</button>
                 </div>
 
 

@@ -1,0 +1,20 @@
+.payment-successful {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-successful>div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.payment-successful div div {
+    background-color: var(--buttonHoverColor);
+    padding: 10px;
+}
+
+.payment-successful p {
+    color: lightgray;
+}
