@@ -2,6 +2,10 @@ import '../ComponentsStyles/itemCart.css';
 import { BsTrash } from 'react-icons/bs';
 
 const ItemCart = ({ cartItem }) => {
+
+    function deleteProductFromCart() {
+        localStorage.removeItem('cart');
+    }
     return (
         <div className="cart-item">
             <div className="cart-item-image">
@@ -10,9 +14,7 @@ const ItemCart = ({ cartItem }) => {
             <div className="cart-item-content">
                 <div>
                     <p>{cartItem.productModel}</p>
-                    <BsTrash />
-                    {/* #76787f */}
-
+                    <BsTrash onClick={deleteProductFromCart} />
                 </div>
                 <div>
                     <span>{`${cartItem.productPrice}x${cartItem.productQuantity}`}</span>

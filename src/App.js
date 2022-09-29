@@ -13,6 +13,7 @@ import FilterBar from './components/FilterBar';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import ProductDetails from './pages/ProductDetails';
+import Checkout from './pages/Checkout';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path='/products/women' element={<WomenCollection />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/checkout' element={<Checkout />} />
 
           <Route path='*' element={<FilterBar />}
 

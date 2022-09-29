@@ -53,7 +53,7 @@ const Header = () => {
             </header>
 
             <hr className='header-hr' />
-            <Cart showState={show} />
+            <Cart showState={show} showCart={showCart} />
 
         </React.Fragment>
     );
