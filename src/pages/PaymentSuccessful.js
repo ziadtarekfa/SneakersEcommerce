@@ -1,4 +1,4 @@
-import { PFiCheck } from 'react-icons/fi';
+// import { PFiCheck } from 'react-icons/fi';
 import '../pagesStyles/PaymentSuccessful.css';
 const PaymentSuccessful = () => {
     return (
@@ -6,7 +6,7 @@ const PaymentSuccessful = () => {
 
             <div>
                 <div>
-                    <PFiCheck />
+                    {/* <PFiCheck /> */}
                 </div>
                 <h1>Payment Successful</h1>
                 <p>Congratulation on  your order.Be sure to check your emails for order updates</p>

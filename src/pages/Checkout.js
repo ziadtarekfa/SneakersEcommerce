@@ -1,11 +1,29 @@
 import '../pagesStyles/Checkout.css';
 import ItemCart from '../components/ItemCart';
 import countriesData from '../config/countries.json';
+import { getDatabase, push, ref } from 'firebase/database';
+import { getAuth } from 'firebase/auth';
+import { app } from '../config/firebaseConfig';
+import { useNavigate } from 'react-router-dom';
 const Checkout = () => {
 
     const cart = JSON.parse(localStorage.getItem('cart'));
     // const countries = JSON.parse(countriesData);
     // console.log(countries);
+
+    let navigate = useNavigate();
+
+    function handlePaymentBtn() {
+        const userId = getAuth(app).currentUser.uid;
+        const db = getDatabase();
+        push(ref(db, `users/${userId}/orders`), {
+            cart: cart,
+            totalAmount: document.getElementById('total').innerText
+        });
+        navigate('/checkout/paymentSuccessful');
+        localStorage.removeItem('cart');
+
+    }
     return (
         <main className='checkout'>
             <div className='shipping-info'>
@@ -43,7 +61,7 @@ const Checkout = () => {
                         <option>Egypt</option>
                         <option>Egypt</option>
                     </select>
-                    <button>Pay Now</button>
+                    <button onClick={handlePaymentBtn}>Pay Now</button>
                 </div>
 
 
@@ -79,7 +97,7 @@ const Checkout = () => {
                         <hr />
                         <div className='order-summary-total-container'>
                             <h3>Total</h3>
-                            <span>$210.52</span>
+                            <span id='total'>$210.52</span>
                         </div>
                     </div>
                 </aside>
