@@ -1,6 +1,7 @@
 
 import BrandCard from '../components/BrandCard';
 import CategoryCard from '../components/CategoryCard';
+import bgCategory from '../assets/Headers/collections-header.jpg';
 import { nike, adidas, puma, reebok, vans, jordan } from './index';
 
 import '../pagesStyles/Brands.css';
@@ -8,7 +9,7 @@ import '../pagesStyles/Brands.css';
 const Collections = () => {
     return (
         <main>
-            <CategoryCard category="Collections" />
+            <CategoryCard category="Collections" categoryBgImage={bgCategory} />
             <div className='brands-grid'>
                 <BrandCard brandLogo={nike} brandName="NIKE" />
                 <BrandCard brandLogo={adidas} brandName="ADIDAS" />

@@ -7,6 +7,7 @@ import { useState } from 'react';
 import '../ComponentsStyles/Header.css';
 import React from 'react';
 import Cart from './Cart';
+import Notification from './Notification';
 
 const Header = () => {
     let navigate = useNavigate();
@@ -27,7 +28,11 @@ const Header = () => {
                     </Link>
                     <ul>
                         <li>
-                            <Link to={"/collections"}>Collections</Link>
+                            <div style={{ 'display': 'flex', 'flexDirection': 'column', 'width': '100%' }}>
+                                <Link to={"/collections"}>Collections</Link>
+                                {/* <div style={{ 'color': '#000', 'width': '10px', 'height': '10px' }}></div> */}
+                            </div>
+
                         </li>
                         <li>
                             <Link to={"/products/men"}>Men</Link>
@@ -45,8 +50,11 @@ const Header = () => {
                 </nav>
 
                 <div>
+                    <Notification />
                     <img id='cart' src={cart} alt="cart icon" onClick={handleCartClick} />
-                    <button onClick={handleClick} className="default-button header-button" >Login</button>
+                    <Link to='/login'>
+                        <button className="default-button header-button" >Login</button>
+                    </Link>
                 </div>
 
 

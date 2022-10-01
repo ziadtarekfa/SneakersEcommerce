@@ -2,7 +2,7 @@ import CategoryCard from '../components/CategoryCard';
 
 import { IoLocation, IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
-
+import bgCategory from '../assets/Headers/contact-header.jpg';
 import { getDatabase, ref, push } from 'firebase/database';
 
 
@@ -20,11 +20,12 @@ const Contact = () => {
             title: document.getElementById('title').value,
             message: document.getElementById('message').value
         });
+        e.target.reset();
     }
 
     return (
-        <main>
-            <CategoryCard category="Contact" />
+        <main className='main-contact'>
+            <CategoryCard category="Contact" categoryBgImage={bgCategory} />
             <div className='contact-container'>
                 <section className='contact-info'>
 

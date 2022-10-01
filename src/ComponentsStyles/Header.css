@@ -15,7 +15,7 @@ header div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 10%;
+    width: 15%;
 
 }
 
@@ -33,12 +33,12 @@ nav ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    width: 100%;
-    font-size: 20px;
+    width: 60%;
+    font-size: 16px;
 }
 
 header button {
-    width: 60%;
+    width: 72px;
 }
 
 .header-hr {

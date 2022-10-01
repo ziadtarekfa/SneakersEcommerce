@@ -1,5 +1,7 @@
 import ProductsList from './ProductsList';
 import useCollectionFetcher from "../entities/useCollectionFetcher";
+import bgCategory from '../assets/Headers/about-header.jpg';
+import Loading from '../components/Loading';
 
 const AllCollections = () => {
 
@@ -9,7 +11,7 @@ const AllCollections = () => {
 
         <>
             {
-                loading ? <div>Loading</div> : <ProductsList category={"Products"} collection={collection} />
+                loading ? <Loading /> : <ProductsList category={"Products"} bgCategory={bgCategory} collection={collection} />
             }
         </>
 

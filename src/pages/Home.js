@@ -8,8 +8,7 @@ import { getDatabase, onValue, ref, query, limitToFirst } from "firebase/databas
 
 import { truck, handHoldingDollar, star } from './index'
 import '../pagesStyles/Home.css';
-import useCollectionFetcher from '../entities/useCollectionFetcher';
-import ProductsList from './ProductsList';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -47,7 +46,9 @@ const Home = () => {
                 <section className="intro-content-container">
                     <h1>Discover Your Dream Sneakers</h1>
                     <p>With a wide range of quality and affordable sneakers to choose from, browse through our collections for that sneakers you’ve always wanted.</p>
-                    <button className='default-button'>Explore Products</button>
+                    <Link to='/products'>
+                        <button className='default-button'>Explore Products</button>
+                    </Link>
                 </section>
                 <section className="hero-sneaker-container">
                     <img src={heroSneaker} alt="heroSneaker" />
@@ -79,9 +80,11 @@ const Home = () => {
                         // loading ? <div>Loading</div> : <ProductsList collection={collection} />
                     }
                 </div>
-                <div>
+
+                <Link to='/products'>
                     <button>Explore More</button>
-                </div>
+                </Link>
+
 
             </section>
 

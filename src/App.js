@@ -15,6 +15,8 @@ import Login from './pages/Login';
 import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout';
 import PaymentSuccessful from './pages/PaymentSuccessful';
+import ScrollToTop from './entities/ScrollToTop';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
 
         <Header />
 
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/collections' element={<Brands />} />
@@ -36,7 +39,7 @@ function App() {
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/checkout/paymentSuccessful' element={<PaymentSuccessful />} />
 
-          <Route path='*' element={<FilterBar />}
+          <Route path='*' element={<PageNotFound />}
 
           // page not found? 
           />

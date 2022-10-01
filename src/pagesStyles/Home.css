@@ -84,6 +84,10 @@
     justify-content: center;
 }
 
+.products-section a {
+    /* width: 30%; */
+}
+
 .products-section button {
 
     background-color: var(--buttonHoverColor);
@@ -92,9 +96,10 @@
     color: var(--primaryColor);
     font-size: 17px;
     font-weight: bold;
-    width: 17%;
     height: 60px;
     margin-top: 5%;
+    width: 25%;
+
 
 }
 
