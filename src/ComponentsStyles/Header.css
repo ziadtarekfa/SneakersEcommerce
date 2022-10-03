@@ -19,12 +19,6 @@ header div {
 
 }
 
-header a {
-    text-decoration: none;
-    color: grey;
-}
-
-
 #logo {
     margin-right: 40px;
 }
@@ -37,8 +31,14 @@ nav ul {
     font-size: 16px;
 }
 
+nav a {
+    text-decoration: none;
+    color: grey;
+}
+
+
 header button {
-    width: 72px;
+    padding: 0 10px 0 10px;
 }
 
 .header-hr {

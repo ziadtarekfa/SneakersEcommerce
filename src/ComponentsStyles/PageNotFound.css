@@ -1,9 +1,10 @@
 .page-not-found {
-    height: calc(100vh - 220px);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 12% 0 11% 0;
 }
 
 .page-not-found button {

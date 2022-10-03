@@ -3,22 +3,19 @@ import logo from '../assets/icons/logo.svg';
 import cart from '../assets/icons/icon-cart.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
-
-import '../ComponentsStyles/Header.css';
-import React from 'react';
+import { auth } from '../config/firebaseConfig';
+import { signOut } from 'firebase/auth';
 import Cart from './Cart';
 import Notification from './Notification';
-import app from '../config/firebaseConfig';
+
+import '../ComponentsStyles/Header.css';
 
 const Header = () => {
     let navigate = useNavigate();
     const [show, showCart] = useState(false);
     const [isSigned, setLogin] = useState();
 
-    // const [handleClick, setHandleClick] = useState();
 
-    const auth = getAuth(app);
     const user = auth.currentUser;
     useEffect(() => {
         if (user == null) {
@@ -31,29 +28,28 @@ const Header = () => {
         }
     }, [user])
 
-    function handleClick() {
+
+    function handleCartClick() {
+        showCart(!show);
+    }
+
+    function handleSignClick() {
         if (user == null) {
             navigate('/login');
         }
         else {
             signOut(auth).then(() => {
-                // Sign-out successful.
-                console.log("Successful sign out");
                 setLogin("Login");
             }).catch((error) => {
-                // An error happened.
                 console.log(error);
             });
         }
     }
 
 
-    function handleCartClick() {
-        showCart(!show);
-    }
 
     return (
-        <React.Fragment>
+        <>
             <header className="Header">
                 <nav>
                     <Link to={"/"}>
@@ -61,11 +57,7 @@ const Header = () => {
                     </Link>
                     <ul>
                         <li>
-                            <div style={{ 'display': 'flex', 'flexDirection': 'column', 'width': '100%' }}>
-                                <Link to={"/collections"}>Collections</Link>
-                                {/* <div style={{ 'color': '#000', 'width': '10px', 'height': '10px' }}></div> */}
-                            </div>
-
+                            <Link to={"/collections"}>Collections</Link>
                         </li>
                         <li>
                             <Link to={"/products/men"}>Men</Link>
@@ -85,8 +77,7 @@ const Header = () => {
                 <div>
                     <Notification />
                     <img id='cart' src={cart} alt="cart icon" onClick={handleCartClick} />
-
-                    <button className="default-button header-button" onClick={handleClick}>{isSigned}</button>
+                    <button className="default-button header-button" onClick={handleSignClick}>{isSigned}</button>
 
                 </div>
 
@@ -96,7 +87,8 @@ const Header = () => {
             <hr className='header-hr' />
             <Cart showState={show} showCart={showCart} />
 
-        </React.Fragment>
+        </>
+
     );
 }
 

@@ -1,12 +1,12 @@
-import { CategoryCard, FilterBar, ProductCard } from './index';
+import { FilterBar, ProductCard } from './index';
 
 import { useState } from 'react';
 
-const ProductsList = ({ collection, category, bgCategory }) => {
+const ProductsList = ({ collection }) => {
     const [collectionState, setCollection] = useState(collection);
     return (
         <main>
-            <CategoryCard category={category} categoryBgImage={bgCategory} />
+
             <FilterBar initialCollection={collection} collectionState={collectionState} setCollection={setCollection} />
             <div>
                 <div className="default-products">

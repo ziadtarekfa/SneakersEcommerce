@@ -1,21 +1,18 @@
-.main-contact {
+.contact-wrap {
     background-color: #F7F8FD;
 }
 
 .contact-container {
-    padding: 4% 8% 10% 8%;
     display: flex;
-    /* box-shadow: 5px 5px 20px #DADBE0; */
-    height: 500px;
-    box-sizing: content-box;
-
+    padding: 4% 8% 10% 8%;
 }
 
 /* Contact Info */
 
 .contact-info {
     background-color: var(--buttonHoverColor);
-    padding: 4% 2% 4% 2%;
+    box-sizing: content-box;
+    padding: 4% 2% 15% 3%;
     width: 80%;
 }
 
@@ -40,13 +37,13 @@
 }
 
 .contact-info span {
-    font-weight: 700;
+    font-weight: bold;
 }
 
 /* Contact Form */
 
 .contact-form {
-    padding: 4% 2% 4% 2%;
+    padding: 4% 2% 4% 4%;
     background-color: white;
     width: 100%;
 }
@@ -59,6 +56,6 @@
 }
 
 .contact-form button {
-    min-height: 50px;
+    height: 50px;
     width: 60%;
 }

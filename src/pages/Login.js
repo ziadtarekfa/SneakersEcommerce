@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom';
-import app from '../config/firebaseConfig';
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { getDatabase as database, ref, set } from 'firebase/database';
-import '../pagesStyles/Login.css';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../config/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
+
+import '../pagesStyles/Login.css';
+
+
 const Login = () => {
     let navigate = useNavigate();
-    const auth = getAuth(app);
-
-
-
 
     function signInUser(e) {
         e.preventDefault();
@@ -20,7 +18,6 @@ const Login = () => {
             console.log("signed in");
             console.log(auth.currentUser.uid);
             navigate('/');
-            // writeUserData(auth.currentUser.uid);
         }).catch((error) => {
             // error occurred
             console.log(error.message);

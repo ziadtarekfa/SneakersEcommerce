@@ -12,14 +12,7 @@
     height: 67%;
     width: 40%;
     padding: 4% 3% 4% 3%;
-
 }
-
-/* 
-#password {
-    font-size: 20px;
-    letter-spacing: 1px;
-} */
 
 .login-container form {
     display: flex;
@@ -27,17 +20,18 @@
     margin-top: 10%;
 }
 
-.login-container input+input {
+.login-container #password {
     margin-top: 3%;
 }
 
 .login-container button {
     width: 40%;
     margin-top: 10%;
-    min-height: 50px;
+    height: 50px;
 }
 
 .login-container>div {
+    /* Forget Password & Create New account container */
     display: flex;
     justify-content: space-between;
     margin-top: 10%;
@@ -50,4 +44,5 @@
 
 .login-container a:hover {
     border-bottom: 2px solid var(--primaryColor);
+
 }

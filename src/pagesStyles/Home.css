@@ -1,8 +1,7 @@
 /* Intro Section */
 .intro-container {
     display: flex;
-    margin: 0 8% 0 8%;
-    padding: 10% 0 8% 0;
+    padding: 10% 8% 10% 8%;
 }
 
 .intro-content-container {
@@ -23,7 +22,6 @@
 .intro-container button {
     width: 54%;
     height: 60px;
-    font-size: 17px;
 }
 
 .hero-sneaker-container {
@@ -43,14 +41,11 @@
 
 .benefits-heading {
     width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 70px;
 }
 
 .benefits-heading h2 {
     font-size: 44px;
+    margin-top: 15px;
 }
 
 .benefits-content {
@@ -78,32 +73,31 @@
     margin-top: 4%;
 }
 
-.products-content+div {
-    /* Button container */
+/* Bottom Container */
+
+.btn-bottom-container {
     display: flex;
     justify-content: center;
 }
 
-.products-section a {
-    /* width: 30%; */
+.btn-bottom-container a {
+    width: 25%;
+    margin-top: 5%;
+
 }
 
-.products-section button {
-
+.btn-bottom-container button {
     background-color: var(--buttonHoverColor);
     border: 1px solid var(--primaryColor);
     border-radius: 10px;
     color: var(--primaryColor);
-    font-size: 17px;
     font-weight: bold;
+    font-size: 17px;
+    width: 100%;
     height: 60px;
-    margin-top: 5%;
-    width: 25%;
-
-
 }
 
-.products-section button:hover {
+.btn-bottom-container button:hover {
     background-color: var(--primaryColor);
     border: none;
     color: white;

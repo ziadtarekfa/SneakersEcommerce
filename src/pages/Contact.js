@@ -13,8 +13,7 @@ const Contact = () => {
     function submitFeedBackOrQuestions(e) {
 
         e.preventDefault();
-        const db = getDatabase();
-        push(ref(db, `contact/`), {
+        push(ref(getDatabase(), `contact/`), {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
             title: document.getElementById('title').value,
@@ -24,7 +23,7 @@ const Contact = () => {
     }
 
     return (
-        <main className='main-contact'>
+        <main className='contact-wrap'>
             <CategoryCard category="Contact" categoryBgImage={bgCategory} />
             <div className='contact-container'>
                 <section className='contact-info'>

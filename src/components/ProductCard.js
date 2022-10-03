@@ -15,10 +15,10 @@ const ProductCard = ({ product, id }) => {
             <h6>{product.brand}</h6>
             <h2>{product.model}</h2>
             <div className='prices-container'>
-                <p style={{ 'fontWeight': 'bold', }}>{`$${product.newPrice}`}</p>
-                <p style={{ 'color': '#76787F', 'textDecoration': 'line-through' }}>{`$${product.oldPrice}`}</p>
+                <span style={{ 'fontWeight': 'bold', }}>{`$${product.newPrice}`}</span>
+                <span style={{ 'color': '#76787F', 'textDecoration': 'line-through' }}>{`$${product.oldPrice}`}</span>
                 <div className='discount-percentage-container'>
-                    <p>{`${product.discount}%`}</p>
+                    <span>{`${product.discount}%`}</span>
                 </div>
             </div>
 

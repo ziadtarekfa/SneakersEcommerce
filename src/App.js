@@ -21,10 +21,7 @@ import PageNotFound from './components/PageNotFound';
 function App() {
   return (
 
-
-
     <Router>
-
       <div className="App">
 
         <Header />
@@ -45,7 +42,6 @@ function App() {
 
           <Route path='*' element={<PageNotFound />}
 
-          // page not found? 
           />
 
         </Routes>

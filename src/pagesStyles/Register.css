@@ -3,13 +3,11 @@
     justify-content: center;
     background-image: url('../assets/auth-bg.jpg');
     background-size: cover;
-    height: calc(100vh + 40px);
-    padding: 2% 0 2% 0;
+    padding: 5% 0 5% 0;
 }
 
 .register-container {
     background-color: white;
-    height: 90%;
     width: 40%;
     padding: 4% 3% 4% 3%;
 }
@@ -21,17 +19,16 @@
 }
 
 .register-form div {
+    /* names */
     display: flex;
     justify-content: space-between;
 }
 
-.register-form div input {
-    flex-grow: 0.3;
-}
-
 .register-form input {
+    flex-grow: 0.3;
     margin-top: 3%;
 }
+
 
 .register-form p {
     margin-top: 10%;
@@ -40,14 +37,16 @@
     line-height: 20px;
 }
 
-.register-form span {
-    font-weight: 700;
+.register-form p span {
+    /* Privacy Policy */
+    font-weight: bold;
 }
 
 .register-form button {
+
     width: 40%;
+    height: 50px;
     margin-top: 7%;
-    min-height: 50px;
 }
 
 .register-form+p {

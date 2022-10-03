@@ -1,37 +1,44 @@
 import { Link } from 'react-router-dom';
-import '../pagesStyles/Register.css';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-
 import { auth } from '../config/firebaseConfig';
 import { getDatabase, ref, set } from 'firebase/database';
 import { useNavigate } from 'react-router-dom';
+
+import '../pagesStyles/Register.css';
+
 const Register = () => {
 
-
-
-
     let navigate = useNavigate();
-    const database = getDatabase();
 
     const createUser = (e) => {
 
         e.preventDefault();
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        createUserWithEmailAndPassword(auth, email, password).then(userCredential => {
-            // Account created successfully
-            set(ref(database, `users/${userCredential.user.uid}`), {
-                firstName: document.getElementById('first-name').value,
-                lastName: document.getElementById('last-name').value,
-                email: email
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        if (password !== confirmPassword) {
+            console.log("passwords not equal");
+        }
+        else {
+            createUserWithEmailAndPassword(auth, email, password).then(userCredential => {
+                // Account created successfully
+                writeUserData(userCredential, email);
+                navigate('/');
+
+            }).catch(error => {
+                console.log(error.message);
             });
-            e.target.reset();
-            navigate('/');
+        }
 
-        }).catch(error => {
-            console.log(error.message);
+
+    }
+    function writeUserData(userCredential, email) {
+        set(ref(getDatabase(), `users/${userCredential.user.uid}`), {
+            firstName: document.getElementById('first-name').value,
+            lastName: document.getElementById('last-name').value,
+            email: email
         });
-
     }
 
     return (
@@ -46,7 +53,7 @@ const Register = () => {
                     <input id='email' className='default-input' placeholder="Email" type="email" required></input>
                     <div>
                         <input id='password' className='default-input' placeholder="Password" type='password' required></input>
-                        <input className='default-input' placeholder="Confirm Password" type='password' required></input>
+                        <input id='confirm-password' className='default-input' placeholder="Confirm Password" type='password' required></input>
                     </div>
                     <p>By creating an account, I consent to the processing of my personal data in accordance with the <span>PRIVACY POLICY</span></p>
                     <button className='default-button'>CREATE</button>

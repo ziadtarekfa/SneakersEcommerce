@@ -7,14 +7,28 @@
 .payment-successful>div {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 6% 0 8% 0;
+    margin-top: 30px;
+    justify-content: space-between;
+    height: 400px;
+}
+
+.payment-successful .icon-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--buttonHoverColor);
+    padding: 10px;
+    border-radius: 40px;
 
 }
 
-.payment-successful div div {
-    background-color: var(--buttonHoverColor);
-    padding: 10px;
+.payment-successful svg {
+    width: 30px;
+    height: 30px;
+
 }
 
 .payment-successful p {
-    color: lightgray;
+    color: gray;
 }

@@ -7,16 +7,17 @@ import { nike, adidas, puma, reebok, vans, jordan } from './index';
 import '../pagesStyles/Brands.css';
 
 const Collections = () => {
+    const brands = ['NIKE', 'ADIDAS', 'PUMA', 'REEBOK', 'VANS', 'JORDAN'];
+    const logos = [nike, adidas, puma, reebok, vans, jordan];
     return (
         <main>
             <CategoryCard category="Collections" categoryBgImage={bgCategory} />
             <div className='brands-grid'>
-                <BrandCard brandLogo={nike} brandName="NIKE" />
-                <BrandCard brandLogo={adidas} brandName="ADIDAS" />
-                <BrandCard brandLogo={puma} brandName="PUMA" />
-                <BrandCard brandLogo={reebok} brandName="REEBOK" />
-                <BrandCard brandLogo={vans} brandName="VANS" />
-                <BrandCard brandLogo={jordan} brandName="JORDAN" />
+                {
+                    Array(6).fill(1).map((el, i) =>
+                        <BrandCard brandLogo={logos[i]} brandName={brands[i]} key={brands[i]} />
+                    )
+                }
             </div>
         </main>
     );
