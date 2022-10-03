@@ -3,9 +3,7 @@ import { BsTrash } from 'react-icons/bs';
 
 const ItemCart = ({ cartItem }) => {
 
-    function deleteProductFromCart() {
-        localStorage.removeItem('cart');
-    }
+
     return (
         <div className="cart-item">
             <div className="cart-item-image">
@@ -14,11 +12,11 @@ const ItemCart = ({ cartItem }) => {
             <div className="cart-item-content">
                 <div>
                     <p>{cartItem.productModel}</p>
-                    <BsTrash onClick={deleteProductFromCart} />
+                    <BsTrash />
                 </div>
                 <div>
-                    <span>{`${cartItem.productPrice}x${cartItem.productQuantity}`}</span>
-                    <p>{`$${cartItem.productPrice * cartItem.productQuantity}`}</p>
+                    <span className='total-text'>{`${cartItem.productPrice}x${cartItem.productQuantity}`}</span>
+                    <span className='total'>{`$${cartItem.productPrice * cartItem.productQuantity}`}</span>
                 </div>
             </div>
 

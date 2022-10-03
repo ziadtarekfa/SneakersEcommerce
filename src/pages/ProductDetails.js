@@ -1,12 +1,8 @@
-
-
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { getDatabase, ref, onValue } from "firebase/database";
+import { useState } from 'react';
 import Loading from '../components/Loading';
+import { useProductByIdFetcher } from '../entities/useProductByIdFetcher';
 
 import '../pagesStyles/ProductDetails.css';
-import { useProductByIdFetcher } from '../entities/useProductByIdFetcher';
 
 const ProductDetails = () => {
 

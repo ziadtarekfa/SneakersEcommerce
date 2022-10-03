@@ -8,6 +8,7 @@
     min-width: 400px;
     border-radius: 10px;
     padding-bottom: 30px;
+    z-index: 1;
 
 }
 

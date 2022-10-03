@@ -85,7 +85,7 @@ const Header = () => {
             </header>
 
             <hr className='header-hr' />
-            <Cart showState={show} showCart={showCart} />
+            <Cart show={show} showCart={showCart} />
 
         </>
 

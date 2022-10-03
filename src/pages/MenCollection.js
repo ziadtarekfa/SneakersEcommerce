@@ -18,7 +18,6 @@ const MenCollection = () => {
             <FilterBar />
             {
                 loading ? <Loading /> : <ProductsList collection={collection} />
-
             }
 
         </>
