@@ -15,6 +15,12 @@
 
 }
 
+/* 
+#password {
+    font-size: 20px;
+    letter-spacing: 1px;
+} */
+
 .login-container form {
     display: flex;
     flex-direction: column;

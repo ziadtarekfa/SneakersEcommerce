@@ -2,19 +2,52 @@
 import logo from '../assets/icons/logo.svg';
 import cart from '../assets/icons/icon-cart.svg';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 import '../ComponentsStyles/Header.css';
 import React from 'react';
 import Cart from './Cart';
 import Notification from './Notification';
+import app from '../config/firebaseConfig';
 
 const Header = () => {
     let navigate = useNavigate();
     const [show, showCart] = useState(false);
+    const [isSigned, setLogin] = useState();
+
+    // const [handleClick, setHandleClick] = useState();
+
+    const auth = getAuth(app);
+    const user = auth.currentUser;
+    useEffect(() => {
+        if (user == null) {
+            setLogin("Login");
+            console.log("UseEffect NULL");
+        }
+        else {
+            setLogin("Logout");
+            console.log(`UseEffect ${user.uid}`);
+        }
+    }, [user])
+
     function handleClick() {
-        navigate("/login");
+        if (user == null) {
+            navigate('/login');
+        }
+        else {
+            signOut(auth).then(() => {
+                // Sign-out successful.
+                console.log("Successful sign out");
+                setLogin("Login");
+            }).catch((error) => {
+                // An error happened.
+                console.log(error);
+            });
+        }
     }
+
+
     function handleCartClick() {
         showCart(!show);
     }
@@ -52,9 +85,9 @@ const Header = () => {
                 <div>
                     <Notification />
                     <img id='cart' src={cart} alt="cart icon" onClick={handleCartClick} />
-                    <Link to='/login'>
-                        <button className="default-button header-button" >Login</button>
-                    </Link>
+
+                    <button className="default-button header-button" onClick={handleClick}>{isSigned}</button>
+
                 </div>
 
 

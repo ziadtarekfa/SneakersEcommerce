@@ -1,15 +1,13 @@
 import ItemCart from './ItemCart';
-import '../ComponentsStyles/Cart.css';
-import { app } from '../config/firebaseConfig';
-import { getAuth } from 'firebase/auth'
+import { auth } from '../config/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+
+import '../ComponentsStyles/Cart.css';
 
 const Cart = ({ showState, showCart }) => {
 
     let navigate = useNavigate();
     function handleCheckoutBtn() {
-        const auth = getAuth(app);
         const user = auth.currentUser;
         if (user == null) {
 

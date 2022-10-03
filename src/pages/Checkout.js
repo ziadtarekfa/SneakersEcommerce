@@ -3,7 +3,7 @@ import ItemCart from '../components/ItemCart';
 import countriesData from '../config/countries.json';
 import { getDatabase, push, ref } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
-import { app } from '../config/firebaseConfig';
+import app from '../config/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 const Checkout = () => {
 
