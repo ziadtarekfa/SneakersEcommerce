@@ -1,7 +1,6 @@
 
 import heroSneaker from '../assets/images/hero-sneaker.png';
 import BenefitCard from '../components/BenefitCard';
-import ProductCard from '../components/ProductCard';
 import { truck, handHoldingDollar, star } from './index'
 
 import { getDatabase, ref, query, limitToFirst } from "firebase/database";
@@ -10,9 +9,8 @@ import { Link } from 'react-router-dom';
 
 import Loading from '../components/Loading';
 import useCollectionFetcher from '../entities/useCollectionFetcher';
-
+import ProductsList from './ProductsList';
 import '../pagesStyles/Home.css';
-
 
 const Home = () => {
 
@@ -57,18 +55,10 @@ const Home = () => {
 
             <section className="products-section">
                 <h1>Products</h1>
-                <div className="products-content">
-                    {
-                        loading ? <Loading />
-                            :
-                            collection.map((product) => {
 
-                                return (
-                                    <ProductCard product={product.val()} id={product.key} key={product.key} />
-                                );
-                            })
-                    }
-                </div>
+                {
+                    loading ? <Loading /> : <ProductsList collection={collection} className="products-content" />
+                }
 
                 <div className='btn-bottom-container'>
                     <Link to='/products'>

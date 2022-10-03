@@ -3,6 +3,7 @@ import useCollectionFetcher from "../entities/useCollectionFetcher";
 import bgCategory from '../assets/Headers/about-header.jpg';
 import Loading from '../components/Loading';
 import CategoryCard from '../components/CategoryCard';
+import FilterBar from '../components/FilterBar';
 import { query, ref, getDatabase } from 'firebase/database'
 const AllCollections = () => {
 
@@ -12,8 +13,9 @@ const AllCollections = () => {
     return (
         <>
             <CategoryCard category="Products" categoryBgImage={bgCategory} />
+            <FilterBar />
             {
-                loading ? <Loading /> : <ProductsList category={"Products"} bgCategory={bgCategory} collection={collection} />
+                loading ? <Loading /> : <ProductsList collection={collection} />
             }
         </>
 

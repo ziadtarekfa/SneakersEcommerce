@@ -1,28 +1,17 @@
-import { FilterBar, ProductCard } from './index';
+import ProductCard from '../components/ProductCard';
 
-import { useState } from 'react';
-
-const ProductsList = ({ collection }) => {
-    const [collectionState, setCollection] = useState(collection);
+const ProductsList = ({ collection, className }) => {
     return (
-        <main>
 
-            <FilterBar initialCollection={collection} collectionState={collectionState} setCollection={setCollection} />
-            <div>
-                <div className="default-products">
-                    {
-
-                        collectionState.map((childSnapshot) => {
-                            return (
-                                <ProductCard product={childSnapshot.val()} key={childSnapshot.key} id={childSnapshot.key} />
-                            );
-                        })
-
-                    }
-
-                </div>
-            </div>
-        </main>
+        <div className={className || "default-products"}>
+            {
+                collection.map((childSnapshot) => {
+                    return (
+                        <ProductCard product={childSnapshot.val()} key={childSnapshot.key} id={childSnapshot.key} />
+                    );
+                })
+            }
+        </div>
     );
 }
 
