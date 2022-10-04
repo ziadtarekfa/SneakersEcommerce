@@ -14,9 +14,9 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout';
-import PaymentSuccessful from './pages/PaymentSuccessful';
 import ScrollToTop from './entities/ScrollToTop';
 import PageNotFound from './components/PageNotFound';
+import OrderSuccessful from './pages/OrderSuccessful';
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/checkout' element={<Checkout />} />
-          <Route path='/checkout/paymentSuccessful' element={<PaymentSuccessful />} />
+          <Route path='/checkout/order-successful' element={<OrderSuccessful />} />
 
           <Route path='*' element={<PageNotFound />}
 

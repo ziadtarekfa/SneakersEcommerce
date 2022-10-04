@@ -6,75 +6,65 @@
 
 .checkout input {
     display: block;
-    /* width: 100%; */
     background: transparent;
 }
+
+/* shipping info */
 
 .shipping-info {
     display: flex;
     background-color: #F9F9F9;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    justify-content: space-between;
     flex-direction: column;
     flex-grow: 0.6;
     padding: 20px;
+    height: 600px;
+}
+
+.input-container {
+    display: flex;
     justify-content: space-between;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    /* height: 600px; */
+    width: 100%;
 }
 
-.shipping-info input {
-    margin-top: 20px;
+.input-container input {
+    width: 47%;
 }
 
+
+.shipping-info button {
+    height: 50px;
+    font-weight: bold;
+}
+
+/* order summary */
 .order-summary {
     flex-grow: 0.3;
     margin-left: 5%;
-    height: 70%;
-
-
+    height: 300px;
 }
 
 .order-summary aside {
     background-color: #F9F9F9;
     border: 1px solid lightgray;
     border-radius: 5px;
-    padding: 20px 20px 40px 20px;
+    padding: 20px;
+    padding-bottom: 40px;
     margin-top: 20px;
-    height: 100%;
 }
 
-.checkout .containerr {
-    display: flex;
-
-
-}
-
-.containerr>:first-child {
-    margin-right: 20px;
-}
-
-.containerr input {
-    width: 100%;
-}
-
-.checkout .btn-container {
-    display: flex;
-    justify-content: flex-end;
-
-}
-
-.btn-container button {
-    height: 50px;
-    border-radius: 5px;
-    width: 33%;
+hr {
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .bottom-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 50%;
+    height: 100%;
     margin-top: 20px;
     padding-right: 15px;
 }
@@ -86,48 +76,7 @@
 
 }
 
-.payment-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 250px;
-    padding-top: 20px;
-}
-
-.payment-container>div {
-    display: flex;
-    justify-content: space-between;
-}
-
-.payment-container>div input {
-    /* flex-grow: 0.9; */
-    height: 40px;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid lightgray;
-}
-
-.payment-container select {
-    height: 50px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-}
-
-.payment-container button {
-    background-color: #3B82F6;
-    color: white;
-    font-weight: 700;
-    height: 50px;
-    border-radius: 5px;
-    border: none;
-}
-
-.payment-container>div input:focus,
-.payment-container select:focus {
-    outline: 3px solid #C0DCF7;
-}
-
-.payment-container button:hover {
-    cursor: pointer;
+.order-summary-total-container>* {
+    font-weight: bold;
+    font-size: 18px;
 }

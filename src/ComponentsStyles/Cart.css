@@ -1,10 +1,7 @@
 .cart {
     background-color: #F7F8FD;
     position: absolute;
-    min-height: 250px;
-    width: 200px;
     left: 70%;
-    top: 90px;
     min-width: 400px;
     border-radius: 10px;
     padding-bottom: 30px;
@@ -16,25 +13,26 @@
     padding: 20px;
 }
 
+.cart>div {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
 .cart-items-container {
     padding-top: 15px;
-    padding-bottom: 50px;
+
 }
 
 .cart h3 {
     font-size: 16px;
 }
 
-.cart>div {
-    padding-left: 20px;
-    padding-right: 10px;
-}
 
 .total-container {
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px 20px 10px;
-    font-weight: 700;
+    padding: 15px 0 50px 0;
+    font-weight: bold;
     font-size: 18px;
 }
 
