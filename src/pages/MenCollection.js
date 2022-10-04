@@ -6,18 +6,17 @@ import CategoryCard from '../components/CategoryCard';
 import FilterBar from '../components/FilterBar';
 import { query, ref, getDatabase } from 'firebase/database'
 
-
 const MenCollection = () => {
 
     const myQuery = query(ref(getDatabase(), 'products/'));
-    const { collection, loading } = useCollectionFetcher("men", myQuery);
+    const loading = useCollectionFetcher("men", myQuery);
 
     return (
         <>
             <CategoryCard category="Men" categoryBgImage={bgCategory} />
             <FilterBar />
             {
-                loading ? <Loading /> : <ProductsList collection={collection} />
+                loading ? <Loading /> : <ProductsList />
             }
 
         </>

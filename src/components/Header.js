@@ -20,11 +20,9 @@ const Header = () => {
     useEffect(() => {
         if (user == null) {
             setLogin("Login");
-            console.log("UseEffect NULL");
         }
         else {
             setLogin("Logout");
-            console.log(`UseEffect ${user.uid}`);
         }
     }, [user])
 

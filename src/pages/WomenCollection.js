@@ -9,14 +9,14 @@ import { query, ref, getDatabase } from 'firebase/database'
 
 const WomenCollection = () => {
     const myQuery = query(ref(getDatabase(), 'products/'));
-    const { collection, loading } = useCollectionFetcher("women", myQuery);
+    const loading = useCollectionFetcher("women", myQuery);
 
     return (
         <>
             <CategoryCard category="Women" categoryBgImage={bgCategory} />
             <FilterBar />
             {
-                loading ? <Loading /> : <ProductsList collection={collection} />
+                loading ? <Loading /> : <ProductsList />
             }
 
         </>

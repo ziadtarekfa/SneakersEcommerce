@@ -1,13 +1,16 @@
+import { useSelector } from 'react-redux';
 import ProductCard from '../components/ProductCard';
 
-const ProductsList = ({ collection, className }) => {
+const ProductsList = ({ className }) => {
+
+    const { reduxCollection } = useSelector((state) => state.products);
     return (
 
         <div className={className || "default-products"}>
             {
-                collection.map((childSnapshot) => {
+                reduxCollection.map((product) => {
                     return (
-                        <ProductCard product={childSnapshot.val()} key={childSnapshot.key} id={childSnapshot.key} />
+                        <ProductCard product={product} key={product.id} id={product.id} />
                     );
                 })
             }

@@ -8,17 +8,17 @@ import { query, ref, getDatabase } from 'firebase/database'
 const AllCollections = () => {
 
     const myQuery = query(ref(getDatabase(), 'products/'));
-    const { collection, loading } = useCollectionFetcher(null, myQuery);
+    const loading = useCollectionFetcher(null, myQuery);
 
     return (
         <>
             <CategoryCard category="Products" categoryBgImage={bgCategory} />
             <FilterBar />
             {
-                loading ? <Loading /> : <ProductsList collection={collection} />
+                loading ? <Loading /> : <ProductsList />
             }
-        </>
 
+        </>
 
     );
 }
