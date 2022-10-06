@@ -10,37 +10,28 @@ export const productsSlice = createSlice({
         setReduxCollection: (state, collection) => {
             state.reduxCollection = collection.payload;
         },
-        addProduct: (state, product) => {
-            state.reduxCollection.push(product.payload);
+        sortCollection: (state, sortMode) => {
+
+            if (sortMode.payload === 'Price,low-high') {
+                state.reduxCollection.sort(function (a, b) {
+                    if (a.val().newPrice > b.val().newPrice) return 1;
+                    if (a.val().newPrice < b.val().newPrice) return -1;
+                    return 0;
+                });
+            }
+            else if (sortMode.payload === 'Price,high-low') {
+                state.reduxCollection.sort(function (a, b) {
+                    if (a.val().newPrice > b.val().newPrice) return 1;
+                    if (a.val().newPrice < b.val().newPrice) return -1;
+                    return 0;
+                });
+                state.reduxCollection.reverse();
+            }
+            console.log(state.reduxCollection);
         }
-        // getReduxCollection: (state, filter, query) => {
-        //     console.log(`childsnapshot = hello`);
-        //     onValue(query, (snapshot) => {
-        //         console.log(`childsnapshot = ${snapshot}`);
-
-        //         snapshot.forEach((childSnapshot) => {
-        //             console.log(`childsnapshot = ${childSnapshot}`);
-
-        //             if (filter) {
-        //                 if (childSnapshot.val().gender === filter || childSnapshot.val().gender === 'both') {
-        //                     state.reduxCollection.push(childSnapshot.val());
-
-        //                 }
-        //             }
-        //             else {
-        //                 state.reduxCollection.push(childSnapshot.val());
-        //             }
-
-        //         });
-
-        //     });
-
-
-        // }
-
     }
 
 });
 
 export default productsSlice.reducer;
-export const { setReduxCollection, addProduct } = productsSlice.actions;
+export const { setReduxCollection, sortCollection } = productsSlice.actions;

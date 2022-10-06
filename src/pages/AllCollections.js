@@ -13,7 +13,7 @@ const AllCollections = () => {
     return (
         <>
             <CategoryCard category="Products" categoryBgImage={bgCategory} />
-            <FilterBar />
+            <FilterBar gender="all" />
             {
                 loading ? <Loading /> : <ProductsList />
             }

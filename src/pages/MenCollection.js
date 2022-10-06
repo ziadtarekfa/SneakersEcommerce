@@ -10,11 +10,10 @@ const MenCollection = () => {
 
     const myQuery = query(ref(getDatabase(), 'products/'));
     const loading = useCollectionFetcher("men", myQuery);
-
     return (
         <>
             <CategoryCard category="Men" categoryBgImage={bgCategory} />
-            <FilterBar />
+            <FilterBar gender={"men"} />
             {
                 loading ? <Loading /> : <ProductsList />
             }

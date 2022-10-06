@@ -57,7 +57,7 @@ const Home = () => {
                 <h1>Products</h1>
 
                 {
-                    loading ? <Loading /> : <ProductsList collection={collection} className="products-content" />
+                    loading ? <Loading /> : <ProductsList collection={collection} classname="products-content" />
                 }
 
                 <div className='btn-bottom-container'>

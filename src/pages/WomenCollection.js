@@ -14,7 +14,7 @@ const WomenCollection = () => {
     return (
         <>
             <CategoryCard category="Women" categoryBgImage={bgCategory} />
-            <FilterBar />
+            <FilterBar gender="women" />
             {
                 loading ? <Loading /> : <ProductsList />
             }
