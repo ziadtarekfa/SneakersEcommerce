@@ -1,10 +1,10 @@
-
+import '../ComponentsStyles/Footer.css';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { BsYoutube, BsTwitter, BsInstagram } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
 import { Link } from 'react-router-dom';
 
-import '../ComponentsStyles/Footer.css';
+
 
 const Footer = () => {
 
@@ -46,7 +46,9 @@ const Footer = () => {
                 </ul>
 
                 <p>
-                    @CopyRight 2022 <span>Ziad Tarek.</span> All rights reserved.
+                    @CopyRight 2022 <span onClick={() => {
+                        window.location = 'mailto:  ziadtarekfa@gmail.com'
+                    }}>Ziad Tarek.</span> All rights reserved.
                 </p>
 
             </footer>

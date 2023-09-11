@@ -37,6 +37,7 @@
     }
 
     footer span {
+        color: white;
         text-decoration: underline;
     }
 
@@ -44,8 +45,7 @@
     /* Hovering */
 
     .social-media-container *:hover,
-    .footer-collections-grid a:hover,
-    span:hover {
+    footer span:hover {
         color: var(--primaryColor);
         transition-duration: 0.3s;
         cursor: pointer;

@@ -1,10 +1,12 @@
+import '../ComponentsStyles/FilterBar.css';
+
 import { useDispatch } from 'react-redux';
 import { setReduxCollection } from '../redux/products';
 import getFilterCollection from '../entities/getFilterCollection';
 import { query, ref, getDatabase } from 'firebase/database';
 
 
-import '../ComponentsStyles/FilterBar.css';
+
 
 const FilterBar = ({ gender }) => {
 
