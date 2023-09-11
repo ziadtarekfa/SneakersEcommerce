@@ -7,6 +7,7 @@ import { getDatabase, ref, push } from 'firebase/database';
 
 
 import '../pagesStyles/Contact.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Contact = () => {
 
@@ -20,6 +21,9 @@ const Contact = () => {
             message: document.getElementById('message').value
         });
         e.target.reset();
+        toast.success("Received feedback successfully", {
+            position: 'top-right'
+        });
     }
 
     return (
@@ -56,6 +60,7 @@ const Contact = () => {
                 </section>
 
             </div>
+            <ToastContainer />
         </main>
     );
 }
