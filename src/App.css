@@ -72,3 +72,11 @@ body {
     padding: 5px;
     background-color: var(--buttonHoverColor);
 }
+
+.no-products-found {
+    grid-column: 1/5;
+    margin-left: auto;
+    margin-right: auto;
+    color: gray;
+    font-style: italic;
+}

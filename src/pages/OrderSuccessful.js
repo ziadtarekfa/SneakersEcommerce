@@ -13,7 +13,7 @@ const OrderSuccessful = () => {
                     <AiOutlineCheck />
                 </div>
                 <h1>Order Successful</h1>
-                <p>Congratulation on  your order. Be sure to check your emails for order updates</p>
+                <p>Congratulations on  your order. Be sure to check your email for order updates</p>
 
             </div>
         </main>

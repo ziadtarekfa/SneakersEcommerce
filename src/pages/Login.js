@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const Login = () => {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     function signInUser(e) {
         e.preventDefault();
