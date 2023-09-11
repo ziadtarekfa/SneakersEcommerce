@@ -22,6 +22,11 @@
 
 .login-container #password {
     margin-top: 3%;
+    font-size: 2rem;
+}
+
+.login-container #password::placeholder {
+    font-size: 15px;
 }
 
 .login-container button {
@@ -31,9 +36,6 @@
 }
 
 .login-container>div {
-    /* Forget Password & Create New account container */
-    display: flex;
-    justify-content: space-between;
     margin-top: 10%;
 }
 

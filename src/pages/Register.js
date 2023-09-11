@@ -5,6 +5,7 @@ import { getDatabase, ref, set } from 'firebase/database';
 import { useNavigate } from 'react-router-dom';
 
 import '../pagesStyles/Register.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Register = () => {
 
@@ -18,7 +19,9 @@ const Register = () => {
         const confirmPassword = document.getElementById('confirm-password').value;
 
         if (password !== confirmPassword) {
-            console.log("passwords not equal");
+            toast.error("Passwords don't match", {
+                position: 'top-right'
+            });
         }
         else {
             createUserWithEmailAndPassword(auth, email, password).then(userCredential => {
@@ -27,7 +30,9 @@ const Register = () => {
                 navigate('/');
 
             }).catch(error => {
-                console.log(error.message);
+                toast.error(error.message, {
+                    position: 'top-right'
+                });
             });
         }
 
@@ -61,6 +66,7 @@ const Register = () => {
 
                 <p>Already have an account?&emsp;<Link to='/login'>LOGIN</Link></p>
             </div>
+            <ToastContainer />
         </div>
     );
 }

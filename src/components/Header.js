@@ -9,6 +9,7 @@ import Cart from './Cart';
 import Notification from './Notification';
 
 import '../ComponentsStyles/Header.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Header = () => {
     let navigate = useNavigate();
@@ -38,8 +39,13 @@ const Header = () => {
         else {
             signOut(auth).then(() => {
                 setLogin("Login");
+                toast.success("You signed out successfully", {
+                    position: 'top-right'
+                });
             }).catch((error) => {
-                console.log(error);
+                toast.error(error.message, {
+                    position: 'top-right'
+                });
             });
         }
     }
@@ -84,6 +90,7 @@ const Header = () => {
 
             <hr className='header-hr' />
             <Cart show={show} showCart={showCart} />
+            <ToastContainer />
 
         </>
 

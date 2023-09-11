@@ -27,7 +27,6 @@ export const productsSlice = createSlice({
                 });
                 state.reduxCollection.reverse();
             }
-            console.log(state.reduxCollection);
         }
     }
 
