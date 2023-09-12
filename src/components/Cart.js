@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import '../ComponentsStyles/Cart.css';
 
-const Cart = ({ show, showCart }) => {
+const Cart = ({ isCartOpen, setCartOpen }) => {
 
     let navigate = useNavigate();
     function handleCheckoutBtn() {
@@ -15,7 +15,7 @@ const Cart = ({ show, showCart }) => {
         else {
             navigate('/checkout');
         }
-        showCart(false);
+        setCartOpen(false);
     }
 
     const cart = JSON.parse(localStorage.getItem('cart')) || null;
@@ -23,7 +23,7 @@ const Cart = ({ show, showCart }) => {
     return (
         <>
             {
-                show ?
+                isCartOpen ?
                     <div className='cart'>
                         <div className='cart-heading-container'>
                             <h3>Cart</h3>

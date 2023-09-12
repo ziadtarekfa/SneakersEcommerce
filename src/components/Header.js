@@ -12,8 +12,8 @@ import '../ComponentsStyles/Header.css';
 import { ToastContainer, toast } from 'react-toastify';
 
 const Header = () => {
-    let navigate = useNavigate();
-    const [show, showCart] = useState(false);
+    const navigate = useNavigate();
+    const [isCartOpen, setCartOpen] = useState(false);
     const [isSigned, setLogin] = useState();
 
 
@@ -29,7 +29,7 @@ const Header = () => {
 
 
     function handleCartClick() {
-        showCart(!show);
+        setCartOpen(!isCartOpen);
     }
 
     function handleSignClick() {
@@ -89,7 +89,7 @@ const Header = () => {
             </header>
 
             <hr className='header-hr' />
-            <Cart show={show} showCart={showCart} />
+            <Cart isCart={isCartOpen} setCartOpen={setCartOpen} />
             <ToastContainer />
 
         </>
